@@ -1,0 +1,37 @@
+{
+  "name": "pubg-typescript-api",
+  "version": "0.1.7",
+  "description": "TypeScript wrapper on the official PUBG API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && tsc && cp README.md ./dist/README.md && cp package.json ./dist/package.json",
+    "clean": "rimraf dist",
+    "lint": "tslint --project tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinsileno/pubg-typescript-api.git"
+  },
+  "keywords": [
+    "pubg"
+  ],
+  "author": "Martin Sileno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martinsileno/pubg-typescript-api/issues"
+  },
+  "homepage": "https://github.com/martinsileno/pubg-typescript-api#readme",
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
