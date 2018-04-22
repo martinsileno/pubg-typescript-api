@@ -1,23 +1,23 @@
 export {
-  APIObject,
-  SimpleAPIObject,
+  IAPIObject,
+  ISimpleAPIObject,
 } from './common';
 
 export {
-  Asset,
-  AssetAttributes,
-  Match,
-  Participant,
-  ParticipantAttributes,
-  Roster,
-  RosterAttributes,
-  RosterRelationships,
+  IAsset,
+  IAssetAttributes,
+  IMatch,
+  IParticipant,
+  IParticipantAttributes,
+  IRoster,
+  IRosterAttributes,
+  IRosterRelationships,
 } from './match';
 
 export {
-  Player,
-  PlayerAttributes,
-  PlayerList,
-  PlayerObject,
-  PlayerRelationships,
+  IPlayer,
+  IPlayerAttributes,
+  IPlayerList,
+  IPlayerObject,
+  IPlayerRelationships,
 } from './player';

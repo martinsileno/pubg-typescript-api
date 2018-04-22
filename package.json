@@ -1,6 +1,6 @@
 {
   "name": "pubg-typescript-api",
-  "version": "0.1.9",
+  "version": "1.0.0-beta0",
   "description": "TypeScript wrapper on the official PUBG API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "build": "npm run clean && tsc && cp README.md ./dist/README.md && cp package.json ./dist/package.json",
     "clean": "rimraf dist",
     "lint": "tslint --project tsconfig.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "engines": {
     "node": ">=8"
@@ -27,8 +27,15 @@
   },
   "homepage": "https://github.com/martinsileno/pubg-typescript-api#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
     "rimraf": "^2.6.2",
+    "ts-mockito": "^2.3.0",
+    "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
+    "tslint-no-unused-expression-chai": "^0.1.3",
     "typescript": "^2.8.3"
   },
   "dependencies": {

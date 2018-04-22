@@ -15,13 +15,14 @@
         ],
         "eofline": true,
         "no-duplicate-variable": true,
+        "prefer-const": true,
         "no-eval": true,
         "no-arg": true,
         "no-internal-module": true,
         "no-trailing-whitespace": [true, "ignore-template-strings", "ignore-jsdoc"],
         "no-bitwise": true,
         "no-shadowed-variable": true,
-        "no-unused-expression": true,
+        "no-unused-expression-chai": true,
         "no-unused-variable": [true, {"ignore-pattern": "^(_.*)$"}],
         "one-line": [
           true,
@@ -62,5 +63,7 @@
           "check-type"
         ]
     },
-    "rulesDirectory": []
+    "rulesDirectory": [
+      "tslint-no-unused-expression-chai"
+    ]
 }

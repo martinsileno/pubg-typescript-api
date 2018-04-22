@@ -1,9 +1,9 @@
-export interface SimpleAPIObject {
+export interface ISimpleAPIObject {
   type: string;
   id: string;
 }
 
-export interface APIObject<T, R = void> extends SimpleAPIObject {
+export interface IAPIObject<T, R = void> extends ISimpleAPIObject {
   attributes: T;
   relationships?: R;
 }
