@@ -1,5 +1,7 @@
 
 # PUBG TypeScript API
+
+[![Join the chat at https://gitter.im/pubg-typescript-api/Lobby](https://badges.gitter.im/pubg-typescript-api/Lobby.svg)](https://gitter.im/pubg-typescript-api/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![npm version](https://badge.fury.io/js/pubg-typescript-api.svg)](https://www.npmjs.com/package/pubg-typescript-api)
 
 ## About
