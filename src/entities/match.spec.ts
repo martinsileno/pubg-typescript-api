@@ -1,10 +1,13 @@
-import 'mocha';
 import { expect } from 'chai';
-import { mock, instance } from 'ts-mockito';
-import { IMatch, GameMode, MapName, PlatformRegion, DeathType } from '..';
-import { Match } from './match';
+import 'mocha';
+import { instance, mock } from 'ts-mockito';
+
+import { DeathType, GameMode, IMatch, MapName, PlatformRegion } from '..';
+
 import { Asset } from './asset';
+import { Match } from './match';
 import { Participant } from './participant';
+
 
 /* tslint:disable */
 const API_RESPONSE: IMatch = {

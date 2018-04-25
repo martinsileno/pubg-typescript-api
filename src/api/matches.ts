@@ -1,7 +1,8 @@
 import { AxiosPromise } from 'axios';
 
+import { IMatch } from '..';
+
 import { PubgAPIEndpoint } from './base';
-import { IMatch } from '../interfaces';
 
 
 export class MatchesPubgAPI extends PubgAPIEndpoint {

@@ -1,7 +1,8 @@
 import { AxiosPromise } from 'axios';
 
+import { IPlayer, IPlayerList } from '..';
+
 import { PubgAPIEndpoint } from './base';
-import { IPlayer, IPlayerList } from '../interfaces';
 
 
 export class PlayersPubgAPI extends PubgAPIEndpoint {

@@ -1,8 +1,11 @@
-import 'mocha';
 import { expect } from 'chai';
-import { mock, instance } from 'ts-mockito';
-import { Player } from './player';
+import 'mocha';
+import { instance, mock } from 'ts-mockito';
+
 import { IPlayer } from '../interfaces/player';
+
+import { Player } from './player';
+
 
 /* tslint:disable */
 const API_DETAIL_RESPONSE: IPlayer = {

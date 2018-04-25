@@ -1,5 +1,7 @@
 import { IRoster } from '..';
+
 import { Participant } from './participant';
+
 
 export class Roster {
   private _id: string;
