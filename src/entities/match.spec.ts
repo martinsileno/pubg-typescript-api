@@ -9,6 +9,7 @@ import { Match } from './match';
 import { Participant } from './participant';
 
 
+//#region SETUP STUFF
 /* tslint:disable */
 const API_RESPONSE: IMatch = {
   "data": {
@@ -626,10 +627,16 @@ const participantMartin: ExpectedParticipant = {
   winPoints: 1114,
   winPointsDelta: 78.83802,
 };
+//#endregion
+
 
 describe('Match entity', () => {
 
-  function compareParticipant(p: Participant, expected: ExpectedParticipant): void {
+  function compareParticipant(p: Participant | undefined, expected: ExpectedParticipant): void {
+    if (!p) {
+      expect.fail();
+      return;
+    }
     expect(p.id).to.equal(expected.id);
     expect(p.DBNOs).to.equal(expected.DBNOs);
     expect(p.assists).to.equal(expected.assists);
@@ -723,6 +730,30 @@ describe('Match entity', () => {
     /* tslint:disable-next-line:max-line-length */
     expect(asset.url).to.equal('https://telemetry-cdn.playbattlegrounds.com/bluehole-pubg/pc-eu/2018/04/21/23/06/a63b97bd-45b8-11e8-8433-0a58646e130b-telemetry.json');
     expect(asset.dateCreated).to.deep.equal(new Date('2018-04-21T23:06:40Z'));
+  });
+
+  it('should find player by ID', () => {
+    const match = Match.fromDetail(API_RESPONSE);
+    const participant = match.getParticipantById('99f81c8b-edbd-452c-b8bb-666270b370d3');
+    compareParticipant(participant, participantZakuro);
+  });
+
+  it('should find player by name', () => {
+    const match = Match.fromDetail(API_RESPONSE);
+    const participant = match.getParticipantByName('martinsileno');
+    compareParticipant(participant, participantMartin);
+  });
+
+  it('should return undefined if trying to find player by non-existing ID', () => {
+    const match = Match.fromDetail(API_RESPONSE);
+    const participant = match.getParticipantById('123456');
+    expect(participant).to.be.undefined;
+  });
+
+  it('should return undefined if trying to find player by non-existing name', () => {
+    const match = Match.fromDetail(API_RESPONSE);
+    const participant = match.getParticipantByName('pippo');
+    expect(participant).to.be.undefined;
   });
 
 });

@@ -93,6 +93,7 @@ export class Match {
     return new Match(matchDetail);
   }
 
+  //#region getters
   /**
    * Match ID
    */
@@ -153,4 +154,22 @@ export class Match {
   get rosters() {
     return  this._rosters;
   }
+  //#endregion
+
+  /**
+   * Return the Participant object with the given ID or undefined if not found.
+   * @param id ID of the player to search
+   */
+  getParticipantById(id: string) {
+    return this._participants.find(p => p.id === id);
+  }
+
+  /**
+   * Return the Participant object with the given name or undefined if not found.
+   * @param name name of the player to search
+   */
+  getParticipantByName(name: string) {
+    return this._participants.find(p => p.name === name);
+  }
+
 }
