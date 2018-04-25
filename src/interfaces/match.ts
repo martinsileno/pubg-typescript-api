@@ -1,8 +1,7 @@
-import { DeathType, MapName, GameMode } from '../shared/constants';
-import { APIObject, SimpleAPIObject } from './common';
+import { IAPIObject, ISimpleAPIObject } from './common';
 
 
-export interface RosterAttributes {
+export interface IRosterAttributes {
   shardId: string;
   stats: {
     rank: number;
@@ -11,9 +10,9 @@ export interface RosterAttributes {
   won: string;
 }
 
-export interface RosterRelationships {
+export interface IRosterRelationships {
   participants: {
-    data: SimpleAPIObject[];
+    data: ISimpleAPIObject[];
   };
   team: {
     data: null;
@@ -25,10 +24,10 @@ export interface RosterRelationships {
  * participants depending on the game mode. Roster objects are only meaningful within the context 
  * of a match and are not exposed as a standalone resource.
  */
-export interface Roster extends APIObject<RosterAttributes, RosterRelationships> { }
+export interface IRoster extends IAPIObject<IRosterAttributes, IRosterRelationships> { }
 
 
-export interface ParticipantAttributes {
+export interface IParticipantAttributes {
   actor: string;
   shardId: string;
   stats: {
@@ -36,7 +35,7 @@ export interface ParticipantAttributes {
     assists: number;
     boosts: number;
     damageDealt: number;
-    deathType: DeathType;
+    deathType: string;
     headshotKills: number;
     heals: number;
     killPlace: number;
@@ -69,12 +68,12 @@ export interface ParticipantAttributes {
  * Participant objects are only meaningful within the context of a match and are not exposed as a 
  * standalone resource.
  */
-export interface Participant extends APIObject<ParticipantAttributes> { }
+export interface IParticipant extends IAPIObject<IParticipantAttributes> { }
 
 
-export interface AssetAttributes {
+export interface IAssetAttributes {
   URL: string;
-  createdAt: Date;
+  createdAt: string;
   description: string;
   name: string;
 }
@@ -83,22 +82,22 @@ export interface AssetAttributes {
  * Asset objects contain a URL string that links to a telemetry.json file, which will contain 
  * an array of event objects that provide further insight into a match.
  */
-export interface Asset extends APIObject<AssetAttributes> { }
+export interface IAsset extends IAPIObject<IAssetAttributes> { }
 
 /**
  * Match objects contain the results of a completed match such as the game mode played, duration, 
  * and which players participated
  */
-export interface Match {
+export interface IMatch {
   data: {
     type: string;
     id: string;
     attributes: {
-      createdAt: Date;
+      createdAt: string;
       duration: number;
-      gameMode: GameMode;
-      mapName?: MapName;  // XXX: sometimes not returned?
-      patchVersion?: '';
+      gameMode: string;
+      mapName: string;  // XXX: sometimes not returned?
+      patchVersion?: '';  // XXX: sometimes not returned?
       shardId: string;
       stats: null;
       tags: null;
@@ -106,10 +105,10 @@ export interface Match {
     };
     relationships: {
       assets: {
-        data: SimpleAPIObject[];
+        data: ISimpleAPIObject[];
       };
       rosters: {
-        data: SimpleAPIObject[];
+        data: ISimpleAPIObject[];
       };
       rounds?: {};
       spectators?: {};
@@ -119,7 +118,7 @@ export interface Match {
       self: string;
     };
   };
-  included: (Asset | Participant | Roster)[];
+  included: (IAsset | IParticipant | IRoster)[];
   links: {
     self: string;
   };

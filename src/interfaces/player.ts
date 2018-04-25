@@ -1,22 +1,24 @@
-import { APIObject, SimpleAPIObject } from './common';
+import { IAPIObject, ISimpleAPIObject } from './common';
 
 
-export interface PlayerAttributes {
+export interface IPlayerAttributes {
   name: string;
   shardId: string;
-  createdAt: Date;
+  stats: null;
+  createdAt: string;
   patchVersion: string;
   titleId: string;
+  updatedAt: string;
 }
 
-export interface PlayerRelationships {
+export interface IPlayerRelationships {
   assets: {};
   matches: {
-    data: SimpleAPIObject[];
+    data: ISimpleAPIObject[];
   };
 }
 
-export interface PlayerObject extends APIObject<PlayerAttributes, PlayerRelationships> {
+export interface IPlayerObject extends IAPIObject<IPlayerAttributes, IPlayerRelationships> {
   links: {
     schema: string;
     self: string;
@@ -26,8 +28,8 @@ export interface PlayerObject extends APIObject<PlayerAttributes, PlayerRelation
 /**
  * Player objects contain aggregated lifetime information about each player.
  */
-export interface Player {
-  data: PlayerObject;
+export interface IPlayer {
+  data: IPlayerObject;
   links: {
     self: string;
   };
@@ -37,8 +39,8 @@ export interface Player {
 /**
  * Player objects contain aggregated lifetime information about each player.
  */
-export interface PlayerList {
-  data: PlayerObject[];
+export interface IPlayerList {
+  data: IPlayerObject[];
   links: {
     self: string;
   };

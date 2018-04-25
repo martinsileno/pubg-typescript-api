@@ -1,21 +1,22 @@
 import { AxiosPromise } from 'axios';
 
-import { PubgAPI } from './base';
-import { Player, PlayerList } from '../interfaces';
+import { IPlayer, IPlayerList } from '..';
+
+import { PubgAPIEndpoint } from './base';
 
 
-export class PlayersPubgAPI extends PubgAPI {
+export class PlayersPubgAPI extends PubgAPIEndpoint {
 
-  get(id: string): AxiosPromise<Player> {
-    return this._axios.get(`/players/${id}`);
+  get(id: string): AxiosPromise<IPlayer> {
+    return this.api.axios.get(`/players/${id}`);
   }
 
-  listByID(playerIDs: string[]): AxiosPromise<PlayerList> {
-    return this._axios.get('/players', {params: {'filter[playerIds]': playerIDs.join(',')}});
+  listByID(playerIDs: string[]): AxiosPromise<IPlayerList> {
+    return this.api.axios.get('/players', {params: {'filter[playerIds]': playerIDs.join(',')}});
   }
 
-  listByName(playerNames: string[]): AxiosPromise<PlayerList> {
-    return this._axios.get('/players', {params: {'filter[playerNames]': playerNames.join(',')}});
+  listByName(playerNames: string[]): AxiosPromise<IPlayerList> {
+    return this.api.axios.get('/players', {params: {'filter[playerNames]': playerNames.join(',')}});
   }
 
 }

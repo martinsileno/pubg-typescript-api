@@ -5,7 +5,15 @@
 [![npm version](https://badge.fury.io/js/pubg-typescript-api.svg)](https://www.npmjs.com/package/pubg-typescript-api)
 
 ## About
-TypeScript wrapper on official PUBG API.
+Unofficial TypeScript wrapper on the official PUBG API.
+
+**Main features**:
+
+- Simple to use
+- Maps API resources to *easier-to-use* "Models" (i.e. `Player`, `Match`, `Participant`, etc.)
+- OOP design
+- Fully typed
+- ~~Helps you win chicken dinners~~
 
 ## Getting started
 
@@ -16,86 +24,81 @@ Then install the package with NPM:
 npm install --save pubg-typescript-api
 ```
 
-## Example
+## Usage example
 
 As an example, let's make a command line utility to display some quick **stats on a player's last match**.
 
-Import the module and define your `API_KEY` obtained from the official website  
-obviously the required classes depend on what you're doing, but in this case we need these
+Import the module and define `API_KEY` with your own API key obtained from the official website.
+Obviously the required classes depend on what you're doing, but in this case we need these
 
 ```typescript
-import { MatchesPubgAPI, Participant, PlatformRegion, PlayersPubgAPI } from 'pubg-typescript-api';
+import { Match, PlatformRegion, Player, PubgAPI } from 'pubg-typescript-api';
 
 const API_KEY = 'YOUR_API_KEY_HERE';
 ```
 
-Define a function that will retrieve a player's data from the API:
+First, instantiate the `PubgAPI` object, responsible for making requests to the API authenticated with your API key
 
 ```typescript
-async function getPlayer(name: string) {
-  const playersAPI = new PlayersPubgAPI(API_KEY, PlatformRegion.PC_EU);
-  const apiResult = await playersAPI.listByName([name]);
-  const playersList = apiResult.data.data;
-  if (playersList.length === 0) {
-    console.error('Player not found');
-    return;
-  }
-  return playersList[0];
+const api = new PubgAPI(API_KEY, PlatformRegion.PC_EU);
+```
+
+here we used the Platform and Region `PC_EU`, but you're obviously free to change it to whatever you need. The possible values can be found in the `PlatformRegion` enum.
+
+This object must be given to all methods that retrieve data from the API. For example, let's find the player corresponding to the username "martinsileno"
+
+```typescript
+const players = await Player.filterByName(api, ['martinsileno']);
+const player = players[0];
+console.log(`Found player "${player.name}" with ID: ${player.id}`);
+```
+
+here we're *awaiting* on the Promise returned by `filterByName`, a function that returns a (promise of a) list of Players with the given names.
+
+Now that we have our player's data, let's find stats on his/her last played match
+
+```typescript
+const lastMatchId = player.matchIds[0];
+const match = await Match.get(api, lastMatchId);
+console.log(`Last played match on ${match.dateCreated} and lasted ${Math.round(match.duration / 60)} minutes, with ID: ${match.id}`);
+```
+
+here we extract the latest match ID from `player.matchIds` (it's sorted from newest to oldest) and then using it as argument for `Match.get`, a function that returns a promise of a `Match` object. So by *awaiting* on that, we get our match data.
+
+The last step before running our simple example is to get the player's stats in this Match.
+
+```typescript
+const participant = match.getParticipantByName('martinsileno');
+if (!participant) {
+  console.error('Player not found in participants');
+  return;
 }
+console.log(`${participant.name} placed #${participant.winPlace} out of ${match.participants.length} on ${match.map}`);
+console.log('his stats: ');
+console.log(`kills ${participant.kills}`);
+console.log(`damage ${participant.damageDealt}`);
+console.log(`assists ${participant.assists}`);
+console.log(`headshot kills ${participant.headshotKills}`);
+console.log(`total distance ${participant.totalDistance}m`);
 ```
 
-Returned value is fully typed and all its values correspond to the schema defined on the [Player model](https://documentation.playbattlegrounds.com/en/players.html) on the official API.
+to get a player's stats in a `Match` we use the method `getParticipantByName`, which returns the corresponding `Participant` object.
 
-Once we have the player, we need his/her latest match. For this we instantiate the `MatchesPubgAPI` object and use the `get` method:
+The `Participant` instances contain details on players in a `Match`, see the public getters in the class to find more.
 
-```typescript
-async function getMatch(id: string) {
-  const matchesAPI = new MatchesPubgAPI(API_KEY, PlatformRegion.PC_EU);
-  const apiResult = await matchesAPI.get(id);
-  return apiResult.data;
-}
-```
-
-Again, the result is fully typed and corresponds to the official [Match model](https://documentation.playbattlegrounds.com/en/matches.html).
-
-Now that we have these short helper functions, let's parse the data to get what we need.
-
-First thing to do is call the functions and store their results in `playerData` and `matchData`
-
-```typescript
-  const playerData = await getPlayer('martinsileno');
-  if (!playerData) {
-    return;
-  }
-  const lastMatch = playerData.relationships!.matches.data[0];
-  const matchData = await getMatch(lastMatch.id);
-```
-
-extract an array of `Participant` objects, and among these, find our player
-
-```typescript
-  const participants = matchData.included.filter(obj => obj.type === 'participant') as Participant[];
-  const playerParticipant = participants.find(obj => obj.attributes.stats.playerId === playerData.id);
-  if (!playerParticipant) {
-    console.error('Something went wrong, could not find player in participants');
-    return;
-  }
-```
-
-now that we have our `playerParticipant` object, we have access to his/her stats
-
-```typescript
-  console.log(`${playerData.attributes.name} placed #${playerParticipant.attributes.stats.winPlace} out of ${participants.length} on ${matchData.data.attributes.mapName} in a match that started at ${matchData.data.attributes.createdAt} and lasted ${Math.round(matchData.data.attributes.duration / 60)} minutes`);
-  console.log('his full match stats: ', playerParticipant.attributes.stats);
-```
+And we're done, we can run our example to see if it works, the output should look like
 
 ```
 $ node dist/main.js
-martinsileno placed #1 out of 92 on Desert_Main in a match that started at 2018-04-21T22:33:20Z and lasted 32 minutes
-his full match stats:  
-```
-```js
-{ DBNOs: 2,   assists: 3,  boosts: 4,  damageDealt: 376.501,  deathType: 'alive',  headshotKills: 1,  heals: 1,  killPlace: 16,  killPoints: 1077,  killPointsDelta: 33.6085434,  killStreaks: 0,  kills: 2,  astKillPoints: 0,  lastWinPoints: 0,  longestKill: 19,  mostDamage: 0,  name: 'martinsileno',  playerId: 'account.a540a32a49784025939a975b45e86bfe',  revives: 0,  rideDistance: 0,  roadKills: 0,  teamKills: 0,  timeSurvived: 892,  vehicleDestroys: 0,  walkDistance: 3915.62,  weaponsAcquired: 0,  winPlace: 1,  winPoints: 1114,  winPointsDelta: 78.83802 }
+Found player "martinsileno" with ID: account.a540a32a49784025939a975b45e86bfe
+Last played match on Sun Apr 22 2018 00:33:20 GMT+0200 (W. Europe Daylight Time) and lasted 32 minutes, with ID: a6d8d8f7-a3c4-4b1c-9947-8df40c144283
+martinsileno placed #1 out of 92 on Desert_Main
+his stats:
+kills 2
+damage 376.501
+assists 3
+headshot kills 1
+total distance 3915.62m
 ```
 
 ## License
