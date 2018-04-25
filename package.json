@@ -1,6 +1,6 @@
 {
   "name": "pubg-typescript-api",
-  "version": "1.0.0-beta0",
+  "version": "1.0.0",
   "description": "TypeScript wrapper on the official PUBG API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
