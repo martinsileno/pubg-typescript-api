@@ -141,6 +141,11 @@ describe('Player entity', () => {
     const player = Player.fromDetail(API_DETAIL_RESPONSE);
     expect(player.id).to.equal('account.a540a32a49784025939a975b45e86bfe');
     expect(player.name).to.equal('martinsileno');
+    expect(player.matchIds).to.eql([
+      'a6d8d8f7-a3c4-4b1c-9947-8df40c144283',
+      '65e16eb9-0c29-495f-97ad-e693faff6135',
+      '2271eef0-d6cf-44bd-a281-660857844c9e',
+    ]);
   });
 
   it('should initialize a list of Player from API list response', () => {
@@ -150,8 +155,18 @@ describe('Player entity', () => {
     const [p1, p2] = players;
     expect(p1.id).to.equal('account.cda9cb29e8ce4146a9ad46d5a0da508b');
     expect(p1.name).to.equal('zaku6652');
+    expect(p1.matchIds).to.eql([
+      'a6d8d8f7-a3c4-4b1c-9947-8df40c144283',
+      '65e16eb9-0c29-495f-97ad-e693faff6135',
+      '2271eef0-d6cf-44bd-a281-660857844c9e',
+    ]);
     expect(p2.id).to.equal('account.a540a32a49784025939a975b45e86bfe');
     expect(p2.name).to.equal('martinsileno');
+    expect(p2.matchIds).to.eql([
+      'a6d8d8f7-a3c4-4b1c-9947-8df40c144283',
+      '65e16eb9-0c29-495f-97ad-e693faff6135',
+      '2271eef0-d6cf-44bd-a281-660857844c9e',
+    ]);
   });
 
 });

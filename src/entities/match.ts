@@ -1,8 +1,25 @@
-import { GameMode, MapName, IMatch, IAsset, IParticipant, IRoster, PlatformRegion } from '..';
-import { Asset } from './asset';
-import { Participant } from './participant';
-import { Roster } from './roster';
+import {
+  Asset,
+  GameMode,
+  IAsset,
+  IMatch,
+  IParticipant,
+  IRoster,
+  MapName,
+  MatchesPubgAPI,
+  Participant,
+  PlatformRegion,
+  PubgAPI,
+  Roster,
+} from '..';
 
+
+/**
+ * A PUBG Match.
+ *
+ * Contains information and statistics on a Match, such as date, duration, map, participants
+ * and teams.
+ */
 export class Match {
   private _id: string;
   private _dateCreated: Date;
@@ -66,6 +83,12 @@ export class Match {
     this._rosters = rosters;
   }
 
+  static async get(api: PubgAPI, matchId: string) {
+    const matchesAPI = new MatchesPubgAPI(api);
+    const matchData = await matchesAPI.get(matchId);
+    return Match.fromDetail(matchData.data);
+  }
+
   static fromDetail(matchDetail: IMatch): Match {
     return new Match(matchDetail);
   }
@@ -110,15 +133,24 @@ export class Match {
     return this._shardId;
   }
 
+  /**
+   * The Asset object linked to this Match. Contains the URL for telemetry data.
+   */
+  get asset() {
+    return this._asset;
+  }
+
+  /**
+   * A list of `Participant` objects, one for each player that took part in the Match.
+   */
   get participants() {
     return this._participants;
   }
 
+  /**
+   * A list of `Roster` objects, one for each team that played the Match.
+   */
   get rosters() {
     return  this._rosters;
-  }
-
-  get asset() {
-    return this._asset;
   }
 }

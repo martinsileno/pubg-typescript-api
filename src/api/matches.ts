@@ -1,13 +1,13 @@
 import { AxiosPromise } from 'axios';
 
-import { PubgAPI } from './base';
+import { PubgAPIEndpoint } from './base';
 import { IMatch } from '../interfaces';
 
 
-export class MatchesPubgAPI extends PubgAPI {
+export class MatchesPubgAPI extends PubgAPIEndpoint {
 
   get(id: string): AxiosPromise<IMatch> {
-    return this._axios.get(`/matches/${id}`);
+    return this.api.axios.get(`/matches/${id}`);
   }
 
 }
