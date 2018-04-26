@@ -21,3 +21,7 @@ export {
   IPlayerObject,
   IPlayerRelationships,
 } from './player';
+
+export {
+  ISample,
+} from './sample';
