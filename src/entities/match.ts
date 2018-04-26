@@ -172,4 +172,11 @@ export class Match {
     return this._participants.find(p => p.name === name);
   }
 
+  /**
+   * Return a list of the Participants that won this match.
+   */
+  getWinners() {
+    return this._participants.filter(p => p.winPlace === 1);
+  }
+
 }
