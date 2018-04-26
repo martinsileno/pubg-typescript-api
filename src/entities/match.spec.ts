@@ -756,4 +756,12 @@ describe('Match entity', () => {
     expect(participant).to.be.undefined;
   });
 
+  it('should find match winner(s)', () => {
+    const match = Match.fromDetail(API_RESPONSE);
+    const winners = match.getWinners();
+    expect(winners).to.have.length(2);
+    compareParticipant(winners[0], participantZakuro);
+    compareParticipant(winners[1], participantMartin);
+  });
+
 });
