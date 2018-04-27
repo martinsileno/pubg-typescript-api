@@ -38,13 +38,6 @@ export class PubgAPI {
   get platformRegion() {
     return this._platformRegion;
   }
-
-  /**
-   * Change the PlatformRegion associated with this API instance.
-   */
-  set platformRegion(region: PlatformRegion) {
-    this._platformRegion = region;
-  }
 }
 
 
