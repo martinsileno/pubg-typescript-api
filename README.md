@@ -128,6 +128,7 @@ You can do **much** more with telemetry data, please read the documentation in t
 The first thing to do when working with telemetry is to download the corresponding object
 
 ```typescript
+const api = new PubgAPI(API_KEY, PlatformRegion.PC_EU);
 const telemetry = await match.getTelemetry(api);
 ```
 
@@ -177,7 +178,6 @@ example output:
 const martinPositions = telemetry.playerPositionEvents.filter(e => e.character.name === 'martinsileno');
 martinPositions.forEach(e => {
   const loc = e.character.location;
-  /* tslint:disable-next-line */
   console.log(`[${e.dateTime.toLocaleDateString()} ${e.dateTime.toLocaleTimeString()} position] (${loc.x}, ${loc.y}, ${loc.z})`);
 });
 ```
