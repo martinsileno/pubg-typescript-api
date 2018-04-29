@@ -139,8 +139,8 @@ export class Match {
   /**
    * The Asset object linked to this Match. Contains the URL for telemetry data.
    */
-  get asset() {
-    return this._asset;
+  get asset(): Asset {
+    return this._asset!;
   }
 
   /**
