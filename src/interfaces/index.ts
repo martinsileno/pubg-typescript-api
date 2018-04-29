@@ -25,3 +25,5 @@ export {
 export {
   ISample,
 } from './sample';
+
+export * from './telemetry';
