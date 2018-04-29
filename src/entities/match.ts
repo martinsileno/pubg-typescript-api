@@ -11,6 +11,8 @@ import {
   PlatformRegion,
   PubgAPI,
   Roster,
+  Telemetry,
+  TelemetryPubgAPI,
 } from '..';
 
 
@@ -137,8 +139,8 @@ export class Match {
   /**
    * The Asset object linked to this Match. Contains the URL for telemetry data.
    */
-  get asset() {
-    return this._asset;
+  get asset(): Asset {
+    return this._asset!;
   }
 
   /**
@@ -177,6 +179,13 @@ export class Match {
    */
   getWinners() {
     return this._participants.filter(p => p.winPlace === 1);
+  }
+
+  async getTelemetry(api: PubgAPI) {
+    const telemetryAPI = new TelemetryPubgAPI(api);
+    const response = await telemetryAPI.get(this._asset!);
+    const telemetry = new Telemetry(response.data);
+    return telemetry;
   }
 
 }

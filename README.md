@@ -4,6 +4,19 @@
 [![Join the chat at https://gitter.im/pubg-typescript-api/Lobby](https://badges.gitter.im/pubg-typescript-api/Lobby.svg)](https://gitter.im/pubg-typescript-api/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![npm version](https://badge.fury.io/js/pubg-typescript-api.svg)](https://www.npmjs.com/package/pubg-typescript-api)
 
+
+## Table of contents
+  * [About](#about)
+  * [Getting started](#getting-started)
+  * [Usage example: player last match](#usage-example-player-last-match)
+  * [Usage example: telemetry](#usage-example-telemetry)
+      * [Download telemetry data](#download-telemetry-data)
+      * [List of kills in a match](#list-of-kills-in-a-match)
+      * [Care package landings](#care-package-landings)
+      * [Player positions in a match](#player-positions-in-a-match)
+  * [License](#license)
+
+
 ## About
 Unofficial TypeScript wrapper on the official PUBG API.
 
@@ -11,6 +24,7 @@ Unofficial TypeScript wrapper on the official PUBG API.
 
 - Simple to use
 - Maps API resources to *easier-to-use* "Models" (i.e. `Player`, `Match`, `Participant`, etc.)
+- Telemetry parsing
 - OOP design
 - Fully typed
 - ~~Helps you win chicken dinners~~
@@ -24,7 +38,7 @@ Then install the package with NPM:
 npm install --save pubg-typescript-api
 ```
 
-## Usage example
+## Usage example: player last match
 
 As an example, let's make a command line utility to display some quick **stats on a player's last match**.
 
@@ -99,6 +113,85 @@ damage 376.501
 assists 3
 headshot kills 1
 total distance 3915.62m
+```
+
+## Usage example: telemetry
+
+This package includes an easy-to-use and complete telemetry parsing utility.
+
+As an usage example we will get a list of player kills, care package landings and a list of player positions for a player.
+
+You can do **much** more with telemetry data, please read the documentation in the wiki for more details.
+
+### Download telemetry data
+
+The first thing to do when working with telemetry is to download the corresponding object
+
+```typescript
+const telemetry = await match.getTelemetry(api);
+```
+
+### List of kills in a match
+
+```typescript
+telemetry.playerKillEvents.forEach(e => {
+    console.log(`[${e.dateTime.toLocaleDateString()} ${e.dateTime.toLocaleTimeString()} kill] ${e.killer.name} -> ${e.victim.name} | ${e.damageCauserName} ${e.damageTypeCategory} @ ${e.distance / 100}m`);
+});
+```
+
+example output:
+
+```
+...
+[2018-4-28 19:16:28 kill] Ludosh -> martinsileno | PlayerMale_A_C Damage_Groggy @ 63.1690576171875m
+[2018-4-28 19:16:28 kill] siperdekizurafa -> zaku6652 | PlayerMale_A_C Damage_Groggy @ 36.4665966796875m
+[2018-4-28 19:16:28 kill] Ludosh -> Novanta | WeapHK416_C Damage_Gun @ 54.971845703125m
+[2018-4-28 19:17:54 kill] Razzmatazzzzz -> WilliamTanz | WeapSCAR-L_C Damage_Gun @ 143.47111328125m
+[2018-4-28 19:17:55 kill] Haspex -> LMNTRIXs | WeapAK47_C Damage_Gun @ 126.266767578125m
+...
+```
+
+*"damage groggy" means bleed out damage*
+
+### Care package landings
+
+```typescript
+telemetry.carePackageLandEvents.forEach(e => {
+  const itemsString = e.itemPackage.items.map(item => item.itemId).join(', ');
+  console.log(`[${e.dateTime.toLocaleDateString()} ${e.dateTime.toLocaleTimeString()} carePackage land] with ${itemsString}`);
+});
+```
+
+example output:
+
+```
+[2018-4-28 19:04:55 carePackage land] with Item_Weapon_M24_C, Item_Ammo_762mm_C, Item_Ammo_762mm_C, Item_Attach_Weapon_Upper_CQBSS_C, Item_Attach_Weapon_Upper_PM2_01_C, Item_Back_C_01_Lv3_C, Item_Heal_MedKit_C
+[2018-4-28 19:11:27 carePackage land] with Item_Weapon_M24_C, Item_Ammo_762mm_C, Item_Ammo_762mm_C, Item_Attach_Weapon_Upper_CQBSS_C, Item_Head_G_01_Lv3_C, Item_Heal_FirstAid_C
+[2018-4-28 19:15:11 carePackage land] with Item_Weapon_Groza_C, Item_Ammo_762mm_C, Item_Ammo_762mm_C, Item_Ammo_762mm_C, Item_Attach_Weapon_Upper_CQBSS_C, Item_Armor_C_01_Lv3_C, Item_Heal_MedKit_C
+[2018-4-28 19:24:19 carePackage land] with Item_Weapon_M249_C, Item_Ammo_556mm_C, Item_Ammo_556mm_C, Item_Head_G_01_Lv3_C, Item_Heal_MedKit_C, Item_Ghillie_02_C
+```
+
+### Player positions in a match
+
+```typescript
+const martinPositions = telemetry.playerPositionEvents.filter(e => e.character.name === 'martinsileno');
+martinPositions.forEach(e => {
+  const loc = e.character.location;
+  /* tslint:disable-next-line */
+  console.log(`[${e.dateTime.toLocaleDateString()} ${e.dateTime.toLocaleTimeString()} position] (${loc.x}, ${loc.y}, ${loc.z})`);
+});
+```
+
+example output:
+
+```
+...
+[2018-4-28 19:12:44 position] (432451, 63057.02734375, 5437.40966796875)
+[2018-4-28 19:12:54 position] (429667.1875, 61954.94921875, 4977.5)
+[2018-4-28 19:13:04 position] (425153.90625, 65993.546875, 4900.1298828125)
+[2018-4-28 19:13:14 position] (422108.46875, 71026.3671875, 5496.9599609375)
+[2018-4-28 19:13:24 position] (419111.8125, 75035.40625, 5401.53759765625)
+...
 ```
 
 ## License

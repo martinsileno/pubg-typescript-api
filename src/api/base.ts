@@ -5,7 +5,7 @@ import { PlatformRegion } from '../shared/constants';
 
 /**
  * Instances of this class will be used to make authenticated requests to the PUBG API.
- * 
+ *
  * Instantiate this by providing your API key and the PlatformRegion.
  */
 export class PubgAPI {
@@ -13,15 +13,19 @@ export class PubgAPI {
   private _apiKey: string;
   private _platformRegion: PlatformRegion;
 
-  constructor(apiKey: string, platformRegion: PlatformRegion) {
+  constructor(apiKey: string, platformRegion: PlatformRegion, useGzip = true) {
     this._apiKey = apiKey;
     this._platformRegion = platformRegion;
+    const headers: {[p: string]: string} = {
+      'Authorization': `Bearer ${this._apiKey}`,
+      'Accept': 'application/json',
+    };
+    if (useGzip) {
+      headers['Accept-Encoding'] = 'gzip';
+    }
     this._axios = axios.create({
       baseURL: `https://api.playbattlegrounds.com/shards/${this._platformRegion}/`,
-      headers: {
-        'Authorization': `Bearer ${this._apiKey}`,
-        'Accept': 'application/json',
-      },
+      headers: headers,
     });
   }
 
@@ -37,13 +41,6 @@ export class PubgAPI {
    */
   get platformRegion() {
     return this._platformRegion;
-  }
-
-  /**
-   * Change the PlatformRegion associated with this API instance.
-   */
-  set platformRegion(region: PlatformRegion) {
-    this._platformRegion = region;
   }
 }
 

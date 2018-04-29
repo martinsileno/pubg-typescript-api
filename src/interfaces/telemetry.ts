@@ -1,0 +1,262 @@
+// XXX: PC has keys lower-cased while XBOX has keys starting with uppercase;
+// at the moment we only support PC style telemetry!
+
+// objects
+
+export interface IItem {
+  itemId: string;
+  stackCount: number;
+  category: string;
+  subCategory: string;
+  attachedItems: string[];
+}
+
+/**
+ * The range for X and Y axes is 0 - 816,000 for 8km maps.
+ * Location values are measured in centimeters.
+ */
+export interface ILocation {
+  x: number;
+  y: number;
+  z: number;
+}
+
+export interface IItemPackage {
+  itemPackageId: string;
+  location: ILocation;
+  items: IItem[];
+}
+
+export interface ICharacter {
+  name: string;
+  teamId: number;
+  health: number;
+  location: ILocation;
+  ranking: number;
+  accountId: string;
+}
+
+export interface IVehicle {
+  vehicleType: string;
+  vehicleId: string;
+  healthPercent: number;
+  feulPercent: number;  // XXX: typo included!
+}
+
+export interface IGameState {
+  elapsedTime: number;
+  numAliveTeams: number;
+  numJoinPlayers: number;
+  numStartPlayers: number;
+  numAlivePlayers:  number;
+  safetyZonePosition: ILocation;
+  safetyZoneRadius: number;
+  poisonGasWarningPosition: ILocation;
+  poisonGasWarningRadius: number;
+  redZonePosition: ILocation;
+  redZoneRadius: number;
+}
+
+// events
+
+// XXX: ICommon exists in PC only!
+export interface ICommon {
+  matchId: string;
+  mapName: string;
+  isGame: number;
+}
+
+export interface IBaseTelemetryEvent {
+  _V: number;
+  _D: string;  // date string
+  _T: string;  // discriminant of the Union type
+}
+
+export interface ITelemetryEvent extends IBaseTelemetryEvent {
+  common: ICommon;
+}
+
+export interface ILogPlayerLogin extends ITelemetryEvent {
+  _T: 'LogPlayerLogin';
+  result: boolean;
+  errorMessage: string;
+  accountId: string;
+}
+
+export interface ILogPlayerCreate extends ITelemetryEvent {
+  _T: 'LogPlayerCreate';
+  character: ICharacter;
+}
+
+export interface ILogPlayerPosition extends ITelemetryEvent {
+  _T: 'LogPlayerPosition';
+  character: ICharacter;
+  elapsedTime: number;
+  numAlivePlayers: number;
+}
+
+export interface ILogPlayerAttack extends ITelemetryEvent {
+  _T: 'LogPlayerAttack';
+  attackId: number;
+  attacker: ICharacter;
+  attackType: string;
+  weapon: IItem;
+  vehicle: IVehicle;
+}
+
+export interface ILogItemPickup extends ITelemetryEvent {
+  _T: 'LogItemPickup';
+  character: ICharacter;
+  item: IItem;
+}
+
+export interface ILogItemEquip extends ITelemetryEvent {
+  _T: 'LogItemEquip';
+  character: ICharacter;
+  item: IItem;
+}
+
+export interface ILogItemUnequip extends ITelemetryEvent {
+  _T: 'LogItemUnequip';
+  character: ICharacter;
+  item: IItem;
+}
+
+export interface ILogVehicleRide extends ITelemetryEvent {
+  _T: 'LogVehicleRide';
+  character: ICharacter;
+  vehicle: IVehicle;
+}
+
+export interface ILogMatchDefinition extends IBaseTelemetryEvent {
+  _T: 'LogMatchDefinition';
+  MatchId: string;
+  PingQuality: string;  // PC only
+}
+
+export interface ILogMatchStart extends ITelemetryEvent {
+  _T: 'LogMatchStart';
+  // some of these fields are not documented but are found in response...
+  mapName: string;
+  weatherId: string;
+  characters: ICharacter[];
+  cameraViewBehaviour: string;
+  teamSize: number;
+  blueZoneCustomOptions: string;
+}
+
+export interface ILogGameStatePeriodic extends ITelemetryEvent {
+  _T: 'LogGameStatePeriodic';
+  gameState: IGameState;
+}
+
+export interface ILogVehicleLeave extends ITelemetryEvent {
+  _T: 'LogVehicleLeave';
+  character: ICharacter;
+  vehicle: IVehicle;
+}
+
+export interface ILogPlayerTakeDamage extends ITelemetryEvent {
+  _T: 'LogPlayerTakeDamage';
+  attackId: number;
+  attacker: ICharacter;
+  victim: ICharacter;
+  damageTypeCategory: string;
+  damageReason: string;
+  damage: number;
+  damageCauserName: string;
+}
+
+export interface ILogPlayerLogout extends ITelemetryEvent {
+  _T: 'LogPlayerLogout';
+  accountId: string;
+}
+
+export interface ILogItemAttach extends ITelemetryEvent {
+  _T: 'LogItemAttach';
+  character: ICharacter;
+  parentItem: IItem;
+  childItem: IItem;
+}
+
+export interface ILogItemDrop extends ITelemetryEvent {
+  _T: 'LogItemDrop';
+  character: ICharacter;
+  item: IItem;
+}
+
+export interface ILogPlayerKill extends ITelemetryEvent {
+  _T: 'LogPlayerKill';
+  attackId: number;
+  killer: ICharacter;
+  victim: ICharacter;
+  damageTypeCategory: string;
+  damageCauserName: string;
+  distance: number;
+}
+
+export interface ILogItemDetach extends ITelemetryEvent {
+  _T: 'LogItemDetach';
+  character: ICharacter;
+  parentItem: IItem;
+  childItem: IItem;
+}
+
+export interface ILogItemUse extends ITelemetryEvent {
+  _T: 'LogItemUse';
+  character: ICharacter;
+  item: IItem;
+}
+
+export interface ILogCarePackageSpawn extends ITelemetryEvent {
+  _T: 'LogCarePackageSpawn';
+  itemPackage: IItemPackage;
+}
+
+export interface ILogVehicleDestroy extends ITelemetryEvent {
+  _T: 'LogVehicleDestroy';
+  attackId: number;
+  attacker: ICharacter;
+  vehicle: IVehicle;
+  damageTypeCategory: string;
+  damageCauserName: string;
+  distance: number;
+}
+
+export interface ILogCarePackageLand extends ITelemetryEvent {
+  _T: 'LogCarePackageLand';
+  itemPackage: IItemPackage;
+}
+
+export interface ILogMatchEnd extends ITelemetryEvent {
+  _T: 'LogMatchEnd';
+  characters: ICharacter[];
+}
+
+export type ITelemetryElement = (
+  ILogPlayerLogin
+  | ILogPlayerCreate
+  | ILogPlayerPosition
+  | ILogPlayerAttack
+  | ILogItemPickup
+  | ILogItemEquip
+  | ILogItemUnequip
+  | ILogVehicleRide
+  | ILogMatchDefinition
+  | ILogMatchStart
+  | ILogGameStatePeriodic
+  | ILogVehicleLeave
+  | ILogPlayerTakeDamage
+  | ILogPlayerLogout
+  | ILogItemAttach
+  | ILogItemDrop
+  | ILogPlayerKill
+  | ILogItemDetach
+  | ILogItemUse
+  | ILogCarePackageSpawn
+  | ILogVehicleDestroy
+  | ILogCarePackageLand
+  | ILogMatchEnd
+);
+
+export type ITelemetry = ITelemetryElement[];
