@@ -26,4 +26,9 @@ export {
   ISample,
 } from './sample';
 
+export {
+  ISeason,
+  ISeasonList,
+} from './season';
+
 export * from './telemetry';
