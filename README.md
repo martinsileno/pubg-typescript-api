@@ -7,6 +7,7 @@
 
 ## Table of contents
   * [About](#about)
+  * [Changelog](#changelog)
   * [Getting started](#getting-started)
   * [Usage example: player last match](#usage-example-player-last-match)
   * [Usage example: player aggregate stats](#usage-example-player-aggregate-stats)
@@ -29,6 +30,10 @@ Unofficial TypeScript wrapper on the official PUBG API.
 - OOP design
 - Fully typed
 - ~~Helps you win chicken dinners~~
+
+## Changelog
+
+See [releases](https://github.com/martinsileno/pubg-typescript-api/releases) tab on github.
 
 ## Getting started
 
@@ -118,7 +123,7 @@ total distance 3915.62m
 
 ## Usage example: player aggregate stats
 
-Since May 1st and version 1.3 of this wrapper we finally have aggregate data on a player for each season.
+Since May 1st and [version 1.3](https://github.com/martinsileno/pubg-typescript-api/releases/tag/v1.3.0) of this wrapper we finally have aggregate data on a player for each season.
 
 Getting this data is very easy,
 
@@ -144,6 +149,15 @@ Played 50 matches
 Won 13 (26.00%)
 top10s 20 (40.00%)
 ```
+
+You can get the season names using the `Season.list` method,
+
+```typescript
+const seasonsList = await Season.list(api);
+seasonsList.forEach(s => console.log(s.id));
+```
+
+*(I suggest you cache the result as it's not likely to change often)*
 
 ## Usage example: telemetry
 
