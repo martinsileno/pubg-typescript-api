@@ -15,15 +15,22 @@ export {
 } from './match';
 
 export {
+  IGameModeStats,
   IPlayer,
   IPlayerAttributes,
   IPlayerList,
   IPlayerObject,
   IPlayerRelationships,
+  IPlayerSeason,
 } from './player';
 
 export {
   ISample,
 } from './sample';
+
+export {
+  ISeason,
+  ISeasonList,
+} from './season';
 
 export * from './telemetry';

@@ -9,6 +9,7 @@
   * [About](#about)
   * [Getting started](#getting-started)
   * [Usage example: player last match](#usage-example-player-last-match)
+  * [Usage example: player aggregate stats](#usage-example-player-aggregate-stats)
   * [Usage example: telemetry](#usage-example-telemetry)
       * [Download telemetry data](#download-telemetry-data)
       * [List of kills in a match](#list-of-kills-in-a-match)
@@ -113,6 +114,35 @@ damage 376.501
 assists 3
 headshot kills 1
 total distance 3915.62m
+```
+
+## Usage example: player aggregate stats
+
+Since May 1st and version 1.3 of this wrapper we finally have aggregate data on a player for each season.
+
+Getting this data is very easy,
+
+```typescript
+const api = new PubgAPI(API_KEY, PlatformRegion.PC_NA);
+const result = await Player.filterByName(api, ['shroud']);
+const shroud = result[0];
+const seasonData = await PlayerSeason.get(api, shroud.id, 'division.bro.official.2018-04');
+const soloStats = seasonData.squadFPPStats;
+console.log(`Player [${shroud.name}] stats for season [${seasonData.seasonId}]:`);
+console.log(`Kills ${soloStats.kills} / Assists ${soloStats.assists} / Knock-outs ${soloStats.dBNOs}`);
+console.log(`Played ${soloStats.roundsPlayed} matches`);
+console.log(`Won ${soloStats.wins} (${(100 * soloStats.wins / soloStats.roundsPlayed).toFixed(2)}%)`);
+console.log(`top10s ${soloStats.top10s} (${(100 * soloStats.top10s / soloStats.roundsPlayed).toFixed(2)}%)`);
+```
+
+This results in
+
+```
+Player [shroud] stats for season [division.bro.official.2018-04]:
+Kills 268 / Assists 50 / Knock-outs 200
+Played 50 matches
+Won 13 (26.00%)
+top10s 20 (40.00%)
 ```
 
 ## Usage example: telemetry
