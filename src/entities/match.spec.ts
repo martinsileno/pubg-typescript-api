@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import 'mocha';
-import { instance, mock } from 'ts-mockito';
 
 import { DeathType, GameMode, IMatch, MapName, PlatformRegion } from '..';
 
