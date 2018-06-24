@@ -18,6 +18,8 @@ export * from './playerLogin';
 export * from './playerLogout';
 export * from './playerPosition';
 export * from './playerTakeDamage';
+export * from './swimEnd';
+export * from './swimStart';
 export * from './telemetryEvent';
 export * from './vehicleDestroy';
 export * from './vehicleLeave';

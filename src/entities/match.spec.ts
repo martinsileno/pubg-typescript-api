@@ -84,6 +84,7 @@ const API_RESPONSE: IMatch = {
           "revives": 0,
           "rideDistance": 304.687073,
           "roadKills": 0,
+          "swimDistance": 87.17336,
           "teamKills": 0,
           "timeSurvived": 1881,
           "vehicleDestroys": 0,
@@ -162,6 +163,7 @@ const API_RESPONSE: IMatch = {
           "revives": 0,
           "rideDistance": 0,
           "roadKills": 0,
+          "swimDistance": 0,
           "teamKills": 0,
           "timeSurvived": 1892,
           "vehicleDestroys": 0,
@@ -201,6 +203,7 @@ const API_RESPONSE: IMatch = {
           "revives": 0,
           "rideDistance": 306.4264,
           "roadKills": 0,
+          "swimDistance": 0,
           "teamKills": 0,
           "timeSurvived": 1892,
           "vehicleDestroys": 0,
@@ -240,6 +243,7 @@ const API_RESPONSE: IMatch = {
           "revives": 1,
           "rideDistance": 0,
           "roadKills": 0,
+          "swimDistance": 0,
           "teamKills": 0,
           "timeSurvived": 1831,
           "vehicleDestroys": 0,
@@ -308,6 +312,7 @@ const API_RESPONSE: IMatch = {
           "revives": 0,
           "rideDistance": 2138.24683,
           "roadKills": 0,
+          "swimDistance": 0,
           "teamKills": 0,
           "timeSurvived": 1831,
           "vehicleDestroys": 0,
@@ -347,6 +352,7 @@ const API_RESPONSE: IMatch = {
           "revives": 0,
           "rideDistance": 0,
           "roadKills": 0,
+          "swimDistance": 0,
           "teamKills": 0,
           "timeSurvived": 1892,
           "vehicleDestroys": 0,
@@ -419,6 +425,7 @@ interface ExpectedParticipant {
   revives: number;
   rideDistance: number;
   roadKills: number;
+  swimDistance: number;
   teamKills: number;
   timeSurvived: number;
   vehicleDestroys: number;
@@ -453,6 +460,7 @@ const participantNix: ExpectedParticipant = {
   rideDistance: 304.687073,
   roadKills: 0,
   teamKills: 0,
+  swimDistance: 87.17336,
   timeSurvived: 1881,
   vehicleDestroys: 0,
   walkDistance: 4652.759,
@@ -485,6 +493,7 @@ const participantZakuro: ExpectedParticipant = {
   revives: 0,
   rideDistance: 0,
   roadKills: 0,
+  swimDistance: 0,
   teamKills: 0,
   timeSurvived: 1892,
   vehicleDestroys: 0,
@@ -518,6 +527,7 @@ const participantHart: ExpectedParticipant = {
   revives: 0,
   rideDistance: 306.4264,
   roadKills: 0,
+  swimDistance: 0,
   teamKills: 0,
   timeSurvived: 1892,
   vehicleDestroys: 0,
@@ -551,6 +561,7 @@ const participantSaiitek: ExpectedParticipant = {
   revives: 1,
   rideDistance: 0,
   roadKills: 0,
+  swimDistance: 0,
   teamKills: 0,
   timeSurvived: 1831,
   vehicleDestroys: 0,
@@ -584,6 +595,7 @@ const participantRobi: ExpectedParticipant = {
   revives: 0,
   rideDistance: 2138.24683,
   roadKills: 0,
+  swimDistance: 0,
   teamKills: 0,
   timeSurvived: 1831,
   vehicleDestroys: 0,
@@ -617,6 +629,7 @@ const participantMartin: ExpectedParticipant = {
   revives: 0,
   rideDistance: 0,
   roadKills: 0,
+  swimDistance: 0,
   teamKills: 0,
   timeSurvived: 1892,
   vehicleDestroys: 0,
@@ -658,6 +671,7 @@ describe('Match entity', () => {
     expect(p.revives).to.equal(expected.revives);
     expect(p.rideDistance).to.equal(expected.rideDistance);
     expect(p.roadKills).to.equal(expected.roadKills);
+    expect(p.swimDistance).to.equal(expected.swimDistance);
     expect(p.teamKills).to.equal(expected.teamKills);
     expect(p.timeSurvived).to.equal(expected.timeSurvived);
     expect(p.vehicleDestroys).to.equal(expected.vehicleDestroys);

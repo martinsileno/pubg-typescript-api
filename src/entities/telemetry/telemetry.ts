@@ -21,6 +21,8 @@ import {
   PlayerLogout,
   PlayerPosition,
   PlayerTakeDamage,
+  SwimEnd,
+  SwimStart,
   VehicleDestroy,
   VehicleLeave,
   VehicleRide,
@@ -48,6 +50,8 @@ export class Telemetry {
   private _playerLogoutEvents: PlayerLogout[] = [];
   private _playerPositionEvents: PlayerPosition[] = [];
   private _playerTakeDamageEvents: PlayerTakeDamage[] = [];
+  private _swimEndEvents: SwimEnd[] = [];
+  private _swimStartEvents: SwimStart[] = [];
   private _vehicleDestroyEvents: VehicleDestroy[] = [];
   private _vehicleLeaveEvents: VehicleLeave[] = [];
   private _vehicleRideEvents: VehicleRide[] = [];
@@ -115,6 +119,12 @@ export class Telemetry {
           break;
         case TelemetryEventType.LOGPLAYERTAKEDAMAGE:
           this._playerTakeDamageEvents.push(new PlayerTakeDamage(elem));
+          break;
+        case TelemetryEventType.LOGSWIMSTART:
+          this._swimStartEvents.push(new SwimStart(elem));
+          break;
+        case TelemetryEventType.LOGSWIMEND:
+          this._swimEndEvents.push(new SwimEnd(elem));
           break;
         case TelemetryEventType.LOGVEHICLEDESTROY:
           this._vehicleDestroyEvents.push(new VehicleDestroy(elem));
@@ -209,6 +219,14 @@ export class Telemetry {
 
   get playerTakeDamageEvents() {
     return this._playerTakeDamageEvents;
+  }
+
+  get swimStartEvents() {
+    return this._swimStartEvents;
+  }
+
+  get swimEndEvents() {
+    return this._swimEndEvents;
   }
 
   get vehicleDestroyEvents() {

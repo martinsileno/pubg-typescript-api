@@ -58,4 +58,6 @@ export enum TelemetryEventType {
   LOGVEHICLEDESTROY = 'LogVehicleDestroy',
   LOGCAREPACKAGELAND = 'LogCarePackageLand',
   LOGMATCHEND = 'LogMatchEnd',
+  LOGSWIMSTART = 'LogSwimStart',
+  LOGSWIMEND = 'LogSwimEnd',
 }

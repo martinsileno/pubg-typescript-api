@@ -233,6 +233,17 @@ export interface ILogMatchEnd extends ITelemetryEvent {
   characters: ICharacter[];
 }
 
+export interface ILogSwimStart extends ITelemetryEvent {
+  _T: 'LogSwimStart';
+  character: ICharacter;
+}
+
+export interface ILogSwimEnd extends ITelemetryEvent {
+  _T: 'LogSwimEnd';
+  character: ICharacter;
+  swimDistance: number;
+}
+
 export type ITelemetryElement = (
   ILogPlayerLogin
   | ILogPlayerCreate
@@ -257,6 +268,8 @@ export type ITelemetryElement = (
   | ILogVehicleDestroy
   | ILogCarePackageLand
   | ILogMatchEnd
+  | ILogSwimStart
+  | ILogSwimEnd
 );
 
 export type ITelemetry = ITelemetryElement[];
