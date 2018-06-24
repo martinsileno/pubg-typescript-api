@@ -60,4 +60,8 @@ export enum TelemetryEventType {
   LOGMATCHEND = 'LogMatchEnd',
   LOGSWIMSTART = 'LogSwimStart',
   LOGSWIMEND = 'LogSwimEnd',
+  LOGARMORDESTROY = 'LogArmorDestroy',
+  LOGWHEELDESTROY = 'LogWheelDestroy',
+  LOGPLAYERMAKEGROGGY = 'LogPlayerMakeGroggy',
+  LOGPLAYERREVIVE = 'LogPlayerRevive',
 }

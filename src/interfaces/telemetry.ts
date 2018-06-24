@@ -241,6 +241,45 @@ export interface ILogSwimEnd extends ITelemetryEvent {
   swimDistance: number;
 }
 
+export interface ILogArmorDestroy extends ITelemetryEvent {
+  _T: 'LogArmorDestroy';
+  attackId: number;
+  attacker: ICharacter;
+  victim: ICharacter;
+  damageTypeCategory: string;
+  damageReason: string;
+  damageCauserName: string;
+  item: IItem;
+  distance: number;
+}
+
+export interface ILogWheelDestroy extends ITelemetryEvent {
+  _T: 'LogWheelDestroy';
+  attackId: number;
+  attacker: ICharacter;
+  vehicle: IVehicle;
+  damageTypeCategory: string;
+  damageCauserName: string;
+}
+
+export interface ILogPlayerMakeGroggy extends ITelemetryEvent {
+  _T: 'LogPlayerMakeGroggy';
+  attackId: number;
+  attacker: ICharacter;
+  victim: ICharacter;
+  damageTypeCategory: string;
+  damageCauserName: string;
+  distance: number;
+  isAttackerInVehicle: boolean;
+  dBNOId: number;
+}
+
+export interface ILogPlayerRevive extends ITelemetryEvent {
+  _T: 'LogPlayerRevive';
+  reviver: ICharacter;
+  victim: ICharacter;
+}
+
 export type ITelemetryElement = (
   ILogPlayerLogin
   | ILogPlayerCreate
@@ -267,6 +306,10 @@ export type ITelemetryElement = (
   | ILogMatchEnd
   | ILogSwimStart
   | ILogSwimEnd
+  | ILogArmorDestroy
+  | ILogWheelDestroy
+  | ILogPlayerMakeGroggy
+  | ILogPlayerRevive
 );
 
 export type ITelemetry = ITelemetryElement[];
