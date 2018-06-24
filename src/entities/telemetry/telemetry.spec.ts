@@ -283,6 +283,8 @@ const API_RESPONSE: ITelemetry = [
       "healthPercent": 0,
       "feulPercent": 0
     },
+    "rideDistance": 49.8331298828125,
+    "seatIndex": 0,
     "common": {
       "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
       "mapName": "Erangel_Main",
@@ -1233,6 +1235,8 @@ describe('Telemetry entity', () => {
     expect(tm.vehicleLeaveEvents).to.have.length(1);
     const event = tm.vehicleLeaveEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:14:58.687Z'));
+    expect(event.seatIndex).to.eq(0);
+    expect(event.rideDistance).to.eq(49.8331298828125);
 
     const character = event.character;
     expect(character.accountId).to.eq('account.aa4bbc13b0064871b40e81de7980cbc6');

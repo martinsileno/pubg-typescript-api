@@ -151,6 +151,8 @@ export interface ILogVehicleLeave extends ITelemetryEvent {
   _T: 'LogVehicleLeave';
   character: ICharacter;
   vehicle: IVehicle;
+  rideDistance: number;  // PC only
+  seatIndex: number;  // PC only
 }
 
 export interface ILogPlayerTakeDamage extends ITelemetryEvent {
