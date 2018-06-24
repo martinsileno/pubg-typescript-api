@@ -123,6 +123,7 @@ export interface ILogVehicleRide extends ITelemetryEvent {
   _T: 'LogVehicleRide';
   character: ICharacter;
   vehicle: IVehicle;
+  seatIndex: number;
 }
 
 export interface ILogMatchDefinition extends IBaseTelemetryEvent {
