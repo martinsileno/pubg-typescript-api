@@ -1,6 +1,3 @@
-// XXX: PC has keys lower-cased while XBOX has keys starting with uppercase;
-// at the moment we only support PC style telemetry!
-
 // objects
 
 export interface IItem {
