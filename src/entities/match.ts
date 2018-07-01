@@ -27,6 +27,7 @@ export class Match {
   private _dateCreated: Date;
   private _duration: number;
   private _gameMode: GameMode;
+  private _isCustomMatch: boolean;
   private _map: MapName;
   private _patchVersion: string | undefined;
   private _shardId: PlatformRegion;
@@ -40,6 +41,7 @@ export class Match {
     this._dateCreated = new Date(matchDetail.data.attributes.createdAt);
     this._duration = matchDetail.data.attributes.duration;
     this._gameMode = matchDetail.data.attributes.gameMode as GameMode;
+    this._isCustomMatch = matchDetail.data.attributes.isCustomMatch;
     this._map = matchDetail.data.attributes.mapName as MapName;
     this._patchVersion = matchDetail.data.attributes.patchVersion;
     this._shardId = matchDetail.data.attributes.shardId as PlatformRegion;
@@ -122,6 +124,10 @@ export class Match {
    */
   get gameMode() {
     return this._gameMode;
+  }
+
+  get isCustomMatch() {
+    return this._isCustomMatch;
   }
 
   get map() {

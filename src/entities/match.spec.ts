@@ -18,6 +18,7 @@ const API_RESPONSE: IMatch = {
       "createdAt": "2018-04-21T22:33:20Z",
       "duration": 1892,
       "gameMode": "duo-fpp",
+      "isCustomMatch": false,
       "mapName": "Desert_Main",
       "shardId": "pc-eu",
       "stats": null,
@@ -688,6 +689,7 @@ describe('Match entity', () => {
     expect(match.dateCreated).to.deep.equal(new Date('2018-04-21T22:33:20Z'));
     expect(match.duration).to.equal(1892);
     expect(match.gameMode).to.equal(GameMode.DUO_FPP);
+    expect(match.isCustomMatch).to.be.false;
     expect(match.map).to.equal(MapName.DESERT_MAIN);
     expect(match.patchVersion).to.be.an('undefined');
     expect(match.shardId).to.equal(PlatformRegion.PC_EU);

@@ -97,6 +97,7 @@ export interface IMatch {
       createdAt: string;
       duration: number;
       gameMode: string;
+      isCustomMatch: boolean;
       mapName: string;  // XXX: sometimes not returned?
       patchVersion?: '';  // XXX: sometimes not returned?
       shardId: string;
