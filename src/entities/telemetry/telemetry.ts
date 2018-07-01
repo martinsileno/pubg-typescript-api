@@ -1,6 +1,7 @@
 import { ITelemetry, TelemetryEventType } from '../..';
 
 import {
+  ArmorDestroy,
   CarePackageLand,
   CarePackageSpawn,
   GameStatePeriodic,
@@ -19,15 +20,21 @@ import {
   PlayerKill,
   PlayerLogin,
   PlayerLogout,
+  PlayerMakeGroggy,
   PlayerPosition,
+  PlayerRevive,
   PlayerTakeDamage,
+  SwimEnd,
+  SwimStart,
   VehicleDestroy,
   VehicleLeave,
   VehicleRide,
+  WheelDestroy,
 } from './events';
 
 
 export class Telemetry {
+  private _armorDestroyEvents: ArmorDestroy[] = [];
   private _carePackageLandEvents: CarePackageLand[] = [];
   private _carePackageSpawnEvents: CarePackageSpawn[] = [];
   private _gameStatePeriodicEvents: GameStatePeriodic[] = [];
@@ -46,16 +53,24 @@ export class Telemetry {
   private _playerKillEvents: PlayerKill[] = [];
   private _playerLoginEvents: PlayerLogin[] = [];
   private _playerLogoutEvents: PlayerLogout[] = [];
+  private _playerMakeGroggyEvents: PlayerMakeGroggy[] = [];
   private _playerPositionEvents: PlayerPosition[] = [];
+  private _playerReviveEvents: PlayerRevive[] = [];
   private _playerTakeDamageEvents: PlayerTakeDamage[] = [];
+  private _swimEndEvents: SwimEnd[] = [];
+  private _swimStartEvents: SwimStart[] = [];
   private _vehicleDestroyEvents: VehicleDestroy[] = [];
   private _vehicleLeaveEvents: VehicleLeave[] = [];
   private _vehicleRideEvents: VehicleRide[] = [];
+  private _wheelDestroyEvents: WheelDestroy[] = [];
 
   constructor(telemetryData: ITelemetry) {
     telemetryData.forEach(elem => {
       switch (elem._T) {
         // switch on discriminant = elem type automatically "cast" as correct type
+        case TelemetryEventType.LOGARMORDESTROY:
+          this._armorDestroyEvents.push(new ArmorDestroy(elem));
+          break;
         case TelemetryEventType.LOGCAREPACKAGELAND:
           this._carePackageLandEvents.push(new CarePackageLand(elem));
           break;
@@ -110,11 +125,23 @@ export class Telemetry {
         case TelemetryEventType.LOGPLAYERLOGOUT:
           this._playerLogoutEvents.push(new PlayerLogout(elem));
           break;
+        case TelemetryEventType.LOGPLAYERMAKEGROGGY:
+          this._playerMakeGroggyEvents.push(new PlayerMakeGroggy(elem));
+          break;
         case TelemetryEventType.LOGPLAYERPOSITION:
           this._playerPositionEvents.push(new PlayerPosition(elem));
           break;
+        case TelemetryEventType.LOGPLAYERREVIVE:
+          this._playerReviveEvents.push(new PlayerRevive(elem));
+          break;
         case TelemetryEventType.LOGPLAYERTAKEDAMAGE:
           this._playerTakeDamageEvents.push(new PlayerTakeDamage(elem));
+          break;
+        case TelemetryEventType.LOGSWIMSTART:
+          this._swimStartEvents.push(new SwimStart(elem));
+          break;
+        case TelemetryEventType.LOGSWIMEND:
+          this._swimEndEvents.push(new SwimEnd(elem));
           break;
         case TelemetryEventType.LOGVEHICLEDESTROY:
           this._vehicleDestroyEvents.push(new VehicleDestroy(elem));
@@ -125,11 +152,18 @@ export class Telemetry {
         case TelemetryEventType.LOGVEHICLERIDE:
           this._vehicleRideEvents.push(new VehicleRide(elem));
           break;
+        case TelemetryEventType.LOGWHEELDESTROY:
+          this._wheelDestroyEvents.push(new WheelDestroy(elem));
+          break;
       }
     });
   }
 
   //#region GETTERS
+
+  get armorDestroyEvents() {
+    return this._armorDestroyEvents;
+  }
 
   get carePackageLandEvents() {
     return this._carePackageLandEvents;
@@ -203,12 +237,28 @@ export class Telemetry {
     return this._playerLogoutEvents;
   }
 
+  get playerMakeGroggyEvents() {
+    return this._playerMakeGroggyEvents;
+  }
+
   get playerPositionEvents() {
     return this._playerPositionEvents;
   }
 
+  get playerReviveEvents() {
+    return this._playerReviveEvents;
+  }
+
   get playerTakeDamageEvents() {
     return this._playerTakeDamageEvents;
+  }
+
+  get swimStartEvents() {
+    return this._swimStartEvents;
+  }
+
+  get swimEndEvents() {
+    return this._swimEndEvents;
   }
 
   get vehicleDestroyEvents() {
@@ -221,6 +271,10 @@ export class Telemetry {
 
   get vehicleRideEvents() {
     return this._vehicleRideEvents;
+  }
+
+  get wheelDestroyEvents() {
+    return this._wheelDestroyEvents;
   }
 
   //#endregion

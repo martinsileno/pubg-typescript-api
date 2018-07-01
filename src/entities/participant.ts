@@ -23,6 +23,7 @@ export class Participant {
   private _revives: number;
   private _rideDistance: number;
   private _roadKills: number;
+  private _swimDistance: number;
   private _teamKills: number;
   private _timeSurvived: number;
   private _vehicleDestroys: number;
@@ -56,6 +57,7 @@ export class Participant {
     this._revives = stats.revives;
     this._rideDistance = stats.rideDistance;
     this._roadKills = stats.roadKills;
+    this._swimDistance = stats.swimDistance;
     this._teamKills = stats.teamKills;
     this._timeSurvived = stats.timeSurvived;
     this._vehicleDestroys = stats.vehicleDestroys;
@@ -186,6 +188,13 @@ export class Participant {
    */
   get roadKills() {
     return this._roadKills;
+  }
+
+  /**
+   * Total distance traveled while swimming measured in meters
+   */
+  get swimDistance() {
+    return this._swimDistance;
   }
 
   get teamKills() {

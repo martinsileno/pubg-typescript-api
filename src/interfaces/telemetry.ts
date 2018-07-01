@@ -1,6 +1,3 @@
-// XXX: PC has keys lower-cased while XBOX has keys starting with uppercase;
-// at the moment we only support PC style telemetry!
-
 // objects
 
 export interface IItem {
@@ -61,13 +58,10 @@ export interface IGameState {
 
 // XXX: ICommon exists in PC only!
 export interface ICommon {
-  matchId: string;
-  mapName: string;
   isGame: number;
 }
 
 export interface IBaseTelemetryEvent {
-  _V: number;
   _D: string;  // date string
   _T: string;  // discriminant of the Union type
 }
@@ -78,8 +72,6 @@ export interface ITelemetryEvent extends IBaseTelemetryEvent {
 
 export interface ILogPlayerLogin extends ITelemetryEvent {
   _T: 'LogPlayerLogin';
-  result: boolean;
-  errorMessage: string;
   accountId: string;
 }
 
@@ -126,6 +118,7 @@ export interface ILogVehicleRide extends ITelemetryEvent {
   _T: 'LogVehicleRide';
   character: ICharacter;
   vehicle: IVehicle;
+  seatIndex: number;
 }
 
 export interface ILogMatchDefinition extends IBaseTelemetryEvent {
@@ -142,6 +135,8 @@ export interface ILogMatchStart extends ITelemetryEvent {
   characters: ICharacter[];
   cameraViewBehaviour: string;
   teamSize: number;
+  isCustomGame: boolean;
+  isEventMode: boolean;
   blueZoneCustomOptions: string;
 }
 
@@ -154,6 +149,8 @@ export interface ILogVehicleLeave extends ITelemetryEvent {
   _T: 'LogVehicleLeave';
   character: ICharacter;
   vehicle: IVehicle;
+  rideDistance: number;  // PC only
+  seatIndex: number;  // PC only
 }
 
 export interface ILogPlayerTakeDamage extends ITelemetryEvent {
@@ -190,6 +187,7 @@ export interface ILogPlayerKill extends ITelemetryEvent {
   attackId: number;
   killer: ICharacter;
   victim: ICharacter;
+  damageReason: string;
   damageTypeCategory: string;
   damageCauserName: string;
   distance: number;
@@ -233,6 +231,57 @@ export interface ILogMatchEnd extends ITelemetryEvent {
   characters: ICharacter[];
 }
 
+export interface ILogSwimStart extends ITelemetryEvent {
+  _T: 'LogSwimStart';
+  character: ICharacter;
+}
+
+export interface ILogSwimEnd extends ITelemetryEvent {
+  _T: 'LogSwimEnd';
+  character: ICharacter;
+  swimDistance: number;
+}
+
+export interface ILogArmorDestroy extends ITelemetryEvent {
+  _T: 'LogArmorDestroy';
+  attackId: number;
+  attacker: ICharacter;
+  victim: ICharacter;
+  damageTypeCategory: string;
+  damageReason: string;
+  damageCauserName: string;
+  item: IItem;
+  distance: number;
+}
+
+export interface ILogWheelDestroy extends ITelemetryEvent {
+  _T: 'LogWheelDestroy';
+  attackId: number;
+  attacker: ICharacter;
+  vehicle: IVehicle;
+  damageTypeCategory: string;
+  damageCauserName: string;
+}
+
+export interface ILogPlayerMakeGroggy extends ITelemetryEvent {
+  _T: 'LogPlayerMakeGroggy';
+  attackId: number;
+  attacker: ICharacter;
+  victim: ICharacter;
+  damageReason: string;  // undocumented?
+  damageTypeCategory: string;
+  damageCauserName: string;
+  distance: number;
+  isAttackerInVehicle: boolean;
+  dBNOId: number;
+}
+
+export interface ILogPlayerRevive extends ITelemetryEvent {
+  _T: 'LogPlayerRevive';
+  reviver: ICharacter;
+  victim: ICharacter;
+}
+
 export type ITelemetryElement = (
   ILogPlayerLogin
   | ILogPlayerCreate
@@ -257,6 +306,12 @@ export type ITelemetryElement = (
   | ILogVehicleDestroy
   | ILogCarePackageLand
   | ILogMatchEnd
+  | ILogSwimStart
+  | ILogSwimEnd
+  | ILogArmorDestroy
+  | ILogWheelDestroy
+  | ILogPlayerMakeGroggy
+  | ILogPlayerRevive
 );
 
 export type ITelemetry = ITelemetryElement[];

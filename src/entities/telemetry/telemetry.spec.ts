@@ -10,20 +10,14 @@ const API_RESPONSE: ITelemetry = [
   {
     "MatchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
     "PingQuality": "low",
-    "_V": 2,
     "_D": "2018-04-27T09:14:41.7057369+00:00",
     "_T": "LogMatchDefinition"
   },
   {
-    "result": true,
-    "errorMessage": "",
     "accountId": "account.b2d6f13944a2487593dd828ed2794231",
     "common": {
-      "matchId": "",
-      "mapName": "",
       "isGame": 0
     },
-    "_V": 2,
     "_D": "2018-04-27T09:13:32.124Z",
     "_T": "LogPlayerLogin"
   },
@@ -41,11 +35,8 @@ const API_RESPONSE: ITelemetry = [
       "accountId": "account.b2d6f13944a2487593dd828ed2794231"
     },
     "common": {
-      "matchId": "",
-      "mapName": "",
       "isGame": 0
     },
-    "_V": 2,
     "_D": "2018-04-27T09:13:32.141Z",
     "_T": "LogPlayerCreate"
   },
@@ -65,11 +56,8 @@ const API_RESPONSE: ITelemetry = [
     "elapsedTime": 626,
     "numAlivePlayers": 49,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:22.997Z",
     "_T": "LogPlayerPosition"
   },
@@ -106,11 +94,8 @@ const API_RESPONSE: ITelemetry = [
       "feulPercent": 0
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:29.504Z",
     "_T": "LogPlayerAttack"
   },
@@ -135,11 +120,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:30.122Z",
     "_T": "LogItemPickup"
   },
@@ -164,11 +146,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:30.172Z",
     "_T": "LogItemEquip"
   },
@@ -193,11 +172,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:36.181Z",
     "_T": "LogItemUnequip"
   },
@@ -220,12 +196,10 @@ const API_RESPONSE: ITelemetry = [
       "healthPercent": 100,
       "feulPercent": 36.70619201660156
     },
+    "seatIndex": 2,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:36.227Z",
     "_T": "LogVehicleRide"
   },
@@ -256,11 +230,8 @@ const API_RESPONSE: ITelemetry = [
       "redZoneRadius": 0
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:14:52.262Z",
     "_T": "LogGameStatePeriodic"
   },
@@ -283,12 +254,11 @@ const API_RESPONSE: ITelemetry = [
       "healthPercent": 0,
       "feulPercent": 0
     },
+    "rideDistance": 49.8331298828125,
+    "seatIndex": 0,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:14:58.687Z",
     "_T": "LogVehicleLeave"
   },
@@ -323,22 +293,16 @@ const API_RESPONSE: ITelemetry = [
     "damage": 100,
     "damageCauserName": "WeapM16A4_C",
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:19.393Z",
     "_T": "LogPlayerTakeDamage"
   },
   {
     "accountId": "account.4bc589020b7e430ca5a100281c0985f4",
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:42.764Z",
     "_T": "LogPlayerLogout"
   },
@@ -370,11 +334,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:44.516Z",
     "_T": "LogItemAttach"
   },
@@ -399,11 +360,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:48.479Z",
     "_T": "LogItemDrop"
   },
@@ -433,15 +391,13 @@ const API_RESPONSE: ITelemetry = [
       "ranking": 0,
       "accountId": "account.767af0c6351a42f5a5eea8ccb0ab1062"
     },
+    "damageReason": "TorsoShot",
     "damageTypeCategory": "Damage_Gun",
     "damageCauserName": "WeapBerreta686_C",
     "distance": 190.9481964111328,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:51.264Z",
     "_T": "LogPlayerKill"
   },
@@ -475,11 +431,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:59.889Z",
     "_T": "LogItemDetach"
   },
@@ -504,11 +457,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:17:16.909Z",
     "_T": "LogItemUse"
   },
@@ -552,11 +502,8 @@ const API_RESPONSE: ITelemetry = [
       ]
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:19:29.226Z",
     "_T": "LogCarePackageSpawn"
   },
@@ -584,11 +531,8 @@ const API_RESPONSE: ITelemetry = [
     "damageCauserName": "RedZoneBomb_C",
     "distance": -1,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:19:52.791Z",
     "_T": "LogVehicleDestroy"
   },
@@ -639,18 +583,195 @@ const API_RESPONSE: ITelemetry = [
       ]
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 3
     },
-    "_V": 2,
     "_D": "2018-04-27T09:33:50.684Z",
     "_T": "LogCarePackageLand"
   },
-
+  {
+    "attackId": 285213655,
+    "attacker": {
+      "name": "just9n",
+      "teamId": 7,
+      "health": 0,
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "ranking": 0,
+      "accountId": "account.c9c08c8befe54788ad28f86ad5f03374"
+    },
+    "victim": {
+      "name": "friday_blunt",
+      "teamId": 8,
+      "health": 41.18181610107422,
+      "location": {
+        "x": 250741.4375,
+        "y": 175829.65625,
+        "z": 1520.4000244140625
+      },
+      "ranking": 0,
+      "accountId": "account.f94eac9c507d43bfaef65a6b5efd484a"
+    },
+    "damageTypeCategory": "Damage_Gun",
+    "damageReason": "TorsoShot",
+    "damageCauserName": "WeapHK416_C",
+    "item": {
+      "itemId": "Item_Armor_C_01_Lv3_C",
+      "stackCount": 1,
+      "category": "Equipment",
+      "subCategory": "Vest",
+      "attachedItems": []
+    },
+    "distance": 11793.1943359375,
+    "common": {
+      "isGame": 4
+    },
+    "_D": "2018-07-01T04:58:59.198Z",
+    "_T": "LogArmorDestroy"
+  },
+  {
+    "character": {
+      "name": "Razgriz_ExE",
+      "teamId": 5,
+      "health": 100,
+      "location": {
+        "x": 333650.375,
+        "y": 353544.375,
+        "z": -210.01318359375
+      },
+      "ranking": 0,
+      "accountId": "account.85f20f9b10c14d67a3a7e8e3f1ffada1"
+    },
+    "common": {
+      "isGame": 0
+    },
+    "_D": "2018-07-01T04:42:54.608Z",
+    "_T": "LogSwimStart"
+  },
+  {
+    "character": {
+      "name": "Jtbarry",
+      "teamId": 24,
+      "health": 100,
+      "location": {
+        "x": 213904.4375,
+        "y": 292718.8125,
+        "z": 123.52888488769531
+      },
+      "ranking": 0,
+      "accountId": "account.f519378643464daf8b352bec6868c222"
+    },
+    "swimDistance": 7.032623291015625,
+    "common": {
+      "isGame": 1.5
+    },
+    "_D": "2018-07-01T04:47:35.061Z",
+    "_T": "LogSwimEnd"
+  },
+  {
+    "attackId": 301991499,
+    "attacker": {
+      "name": "shroud",
+      "teamId": 7,
+      "health": 0,
+      "location": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "ranking": 0,
+      "accountId": "account.d50fdc18fcad49c691d38466bed6f8fd"
+    },
+    "vehicle": {
+      "vehicleType": "WheeledVehicle",
+      "vehicleId": "Dacia_A_01_v2_C",
+      "healthPercent": 92.83333587646484,
+      "feulPercent": 41.6783332824707
+    },
+    "damageTypeCategory": "Damage_Gun",
+    "damageCauserName": "WeapHK416_C",
+    "common": {
+      "isGame": 2.5
+    },
+    "_D": "2018-07-01T04:52:58.363Z",
+    "_T": "LogWheelDestroy"
+  },
+  {
+    "reviver": {
+      "name": "AL3X_madrinas",
+      "teamId": 7,
+      "health": 84,
+      "location": {
+        "x": 263633.75,
+        "y": 212517.890625,
+        "z": 2821.739990234375
+      },
+      "ranking": 0,
+      "accountId": "account.77a8626f5f1b4a16bf563ad2cc6f38e6"
+    },
+    "victim": {
+      "name": "just9n",
+      "teamId": 7,
+      "health": 10,
+      "location": {
+        "x": 263635.21875,
+        "y": 212597.921875,
+        "z": 2822.9599609375
+      },
+      "ranking": 0,
+      "accountId": "account.c9c08c8befe54788ad28f86ad5f03374"
+    },
+    "common": {
+      "isGame": 3.5
+    },
+    "_D": "2018-07-01T04:56:06.303Z",
+    "_T": "LogPlayerRevive"
+  },
+  {
+    "attackId": 301991566,
+    "attacker": {
+      "name": "shroud",
+      "teamId": 7,
+      "health": 50.97999954223633,
+      "location": {
+        "x": 262029.4375,
+        "y": 216320.53125,
+        "z": 3132.679931640625
+      },
+      "ranking": 0,
+      "accountId": "account.d50fdc18fcad49c691d38466bed6f8fd"
+    },
+    "victim": {
+      "name": "AdmiralNavarro",
+      "teamId": 23,
+      "health": 0,
+      "location": {
+        "x": 260638.09375,
+        "y": 219681.640625,
+        "z": 3652.25
+      },
+      "ranking": 0,
+      "accountId": "account.978c661765d74d7995fb6dd5f18a97bf"
+    },
+    "damageReason": "HeadShot",
+    "damageTypeCategory": "Damage_Gun",
+    "damageCauserName": "WeapHK416_C",
+    "distance": 3674.621826171875,
+    "isAttackerInVehicle": false,
+    "dBNOId": 989855744,
+    "common": {
+      "isGame": 3.5
+    },
+    "_D": "2018-07-01T04:56:12.104Z",
+    "_T": "LogPlayerMakeGroggy"
+  },
   {
     "mapName": "Erangel_Main",
     "weatherId": "Clear_02",
+    "isCustomGame": false,
+    "isEventMode": false,
     "characters": [
       {
         "name": "TunAflex",
@@ -669,11 +790,8 @@ const API_RESPONSE: ITelemetry = [
     "teamSize": 1,
     "blueZoneCustomOptions": "[{\"phaseNum\":0,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":1,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":2,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":3,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":4,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":5,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":6,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":7,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":8,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693}]",
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:14:41.702Z",
     "_T": "LogMatchStart"
   },
@@ -705,11 +823,8 @@ const API_RESPONSE: ITelemetry = [
       },
     ],
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 7.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:45:43.640Z",
     "_T": "LogMatchEnd"
   },
@@ -722,6 +837,44 @@ describe('Telemetry entity', () => {
 
   beforeEach(() => {
     tm = new Telemetry(API_RESPONSE);
+  });
+
+  it('should parse armor destroy events', () => {
+    expect(tm.armorDestroyEvents).to.have.length(1);
+    const event = tm.armorDestroyEvents[0];
+    expect(event.dateTime).to.deep.equal(new Date('2018-07-01T04:58:59.198Z'));
+    expect(event.attackId).to.eq(285213655);
+    expect(event.damageTypeCategory).to.eq('Damage_Gun');
+    expect(event.damageReason).to.eq('TorsoShot');
+    expect(event.damageCauserName).to.eq('WeapHK416_C');
+    expect(event.distance).to.eq(11793.1943359375);
+
+    const attacker = event.attacker;
+    expect(attacker.name).to.eq('just9n');
+    expect(attacker.teamId).to.eq(7);
+    expect(attacker.health).to.eq(0);
+    expect(attacker.location.x).to.eq(0);
+    expect(attacker.location.y).to.eq(0);
+    expect(attacker.location.z).to.eq(0);
+    expect(attacker.ranking).to.eq(0);
+    expect(attacker.accountId).to.eq('account.c9c08c8befe54788ad28f86ad5f03374');
+
+    const victim = event.victim;
+    expect(victim.name).to.eq('friday_blunt');
+    expect(victim.teamId).to.eq(8);
+    expect(victim.health).to.eq(41.18181610107422);
+    expect(victim.location.x).to.eq(250741.4375);
+    expect(victim.location.y).to.eq(175829.65625);
+    expect(victim.location.z).to.eq(1520.4000244140625);
+    expect(victim.ranking).to.eq(0);
+    expect(victim.accountId).to.eq('account.f94eac9c507d43bfaef65a6b5efd484a');
+
+    const item = event.item;
+    expect(item.itemId).to.eq('Item_Armor_C_01_Lv3_C');
+    expect(item.stackCount).to.eq(1);
+    expect(item.category).to.eq('Equipment');
+    expect(item.subCategory).to.eq('Vest');
+    expect(item.attachedItems).to.eql([]);
   });
 
   it('should parse care package land events', () => {
@@ -1038,11 +1191,12 @@ describe('Telemetry entity', () => {
   it('should parse match start events', () => {
     expect(tm.matchStartEvents).to.have.length(1);
     const event = tm.matchStartEvents[0];
-    expect(event.version).to.eq(2);
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:14:41.702Z'));
     /* tslint:disable-next-line:max-line-length quotemark */
     expect(event.blueZoneCustomOptions).to.eq("[{\"phaseNum\":0,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":1,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":2,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":3,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":4,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":5,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":6,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":7,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":8,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693}]");
     expect(event.cameraViewBehaviour).to.eq('FpsOnly');
+    expect(event.isCustomGame).to.be.false;
+    expect(event.isEventMode).to.be.false;
     expect(event.mapName).to.eq('Erangel_Main');
     expect(event.teamSize).to.eq(1);
     expect(event.weatherId).to.eq('Clear_02');
@@ -1113,6 +1267,7 @@ describe('Telemetry entity', () => {
     const event = tm.playerKillEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:16:51.264Z'));
     expect(event.attackId).to.eq(503316482);
+    expect(event.damageReason).to.eq('TorsoShot');
     expect(event.damageTypeCategory).to.eq('Damage_Gun');
     expect(event.damageCauserName).to.eq('WeapBerreta686_C');
     expect(event.distance).to.eq(190.9481964111328);
@@ -1143,8 +1298,6 @@ describe('Telemetry entity', () => {
     const event = tm.playerLoginEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:13:32.124Z'));
     expect(event.accountId).to.eq('account.b2d6f13944a2487593dd828ed2794231');
-    expect(event.errorMessage).to.eq('');
-    expect(event.result).to.be.true;
   });
 
   it('should parse player logout events', () => {
@@ -1152,6 +1305,39 @@ describe('Telemetry entity', () => {
     const event = tm.playerLogoutEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:16:42.764Z'));
     expect(event.accountId).to.eq('account.4bc589020b7e430ca5a100281c0985f4');
+  });
+
+  it('should parse player make groggy events', () => {
+    expect(tm.playerMakeGroggyEvents).to.have.length(1);
+    const event = tm.playerMakeGroggyEvents[0];
+    expect(event.dateTime).to.deep.equal(new Date('2018-07-01T04:56:12.104Z'));
+    expect(event.attackId).to.eq(301991566);
+    expect(event.damageTypeCategory).to.eq('Damage_Gun');
+    expect(event.damageCauserName).to.eq('WeapHK416_C');
+    expect(event.damageReason).to.eq('HeadShot');
+    expect(event.distance).to.eq(3674.621826171875);
+    expect(event.isAttackerInVehicle).to.be.false;
+    expect(event.dBNOId).to.eq(989855744);
+
+    const attacker = event.attacker;
+    expect(attacker.accountId).to.eq('account.d50fdc18fcad49c691d38466bed6f8fd');
+    expect(attacker.health).to.eq(50.97999954223633);
+    expect(attacker.location.x).to.eq(262029.4375);
+    expect(attacker.location.y).to.eq(216320.53125);
+    expect(attacker.location.z).to.eq(3132.679931640625);
+    expect(attacker.name).to.eq('shroud');
+    expect(attacker.ranking).to.eq(0);
+    expect(attacker.teamId).to.eq(7);
+
+    const victim = event.victim;
+    expect(victim.accountId).to.eq('account.978c661765d74d7995fb6dd5f18a97bf');
+    expect(victim.health).to.eq(0);
+    expect(victim.location.x).to.eq(260638.09375);
+    expect(victim.location.y).to.eq(219681.640625);
+    expect(victim.location.z).to.eq(3652.25);
+    expect(victim.name).to.eq('AdmiralNavarro');
+    expect(victim.ranking).to.eq(0);
+    expect(victim.teamId).to.eq(23);
   });
 
   it('should parse player position events', () => {
@@ -1170,6 +1356,32 @@ describe('Telemetry entity', () => {
     expect(character.name).to.eq('Cloudity');
     expect(character.ranking).to.eq(0);
     expect(character.teamId).to.eq(2);
+  });
+
+  it('should parse player revive events', () => {
+    expect(tm.playerReviveEvents).to.have.length(1);
+    const event = tm.playerReviveEvents[0];
+    expect(event.dateTime).to.deep.equal(new Date('2018-07-01T04:56:06.303Z'));
+
+    const reviver = event.reviver;
+    expect(reviver.accountId).to.eq('account.77a8626f5f1b4a16bf563ad2cc6f38e6');
+    expect(reviver.health).to.eq(84);
+    expect(reviver.location.x).to.eq(263633.75);
+    expect(reviver.location.y).to.eq(212517.890625);
+    expect(reviver.location.z).to.eq(2821.739990234375);
+    expect(reviver.name).to.eq('AL3X_madrinas');
+    expect(reviver.ranking).to.eq(0);
+    expect(reviver.teamId).to.eq(7);
+
+    const victim = event.victim;
+    expect(victim.accountId).to.eq('account.c9c08c8befe54788ad28f86ad5f03374');
+    expect(victim.health).to.eq(10);
+    expect(victim.location.x).to.eq(263635.21875);
+    expect(victim.location.y).to.eq(212597.921875);
+    expect(victim.location.z).to.eq(2822.9599609375);
+    expect(victim.name).to.eq('just9n');
+    expect(victim.ranking).to.eq(0);
+    expect(victim.teamId).to.eq(7);
   });
 
   it('should parse player take damage events', () => {
@@ -1203,6 +1415,38 @@ describe('Telemetry entity', () => {
     expect(victim.teamId).to.eq(50);
   });
 
+  it('should parse swim end events', () => {
+    expect(tm.swimEndEvents).to.have.length(1);
+    const event = tm.swimEndEvents[0];
+    expect(event.swimDistance).to.eq(7.032623291015625);
+
+    const character = event.character;
+    expect(character.name).to.eq('Jtbarry');
+    expect(character.teamId).to.eq(24);
+    expect(character.health).to.eq(100);
+    expect(character.location.x).to.eq(213904.4375);
+    expect(character.location.y).to.eq(292718.8125);
+    expect(character.location.z).to.eq(123.52888488769531);
+    expect(character.ranking).to.eq(0);
+    expect(character.accountId).to.eq('account.f519378643464daf8b352bec6868c222');
+  });
+
+  it('should parse swim start events', () => {
+    expect(tm.swimStartEvents).to.have.length(1);
+    const event = tm.swimStartEvents[0];
+    expect(event.dateTime).to.deep.equal(new Date('2018-07-01T04:42:54.608Z'));
+
+    const character = event.character;
+    expect(character.name).to.eq('Razgriz_ExE');
+    expect(character.teamId).to.eq(5);
+    expect(character.health).to.eq(100);
+    expect(character.location.x).to.eq(333650.375);
+    expect(character.location.y).to.eq(353544.375);
+    expect(character.location.z).to.eq(-210.01318359375);
+    expect(character.ranking).to.eq(0);
+    expect(character.accountId).to.eq('account.85f20f9b10c14d67a3a7e8e3f1ffada1');
+  });
+
   it('should parse vehicle destroy events', () => {
     expect(tm.vehicleDestroyEvents).to.have.length(1);
     const event = tm.vehicleDestroyEvents[0];
@@ -1233,6 +1477,8 @@ describe('Telemetry entity', () => {
     expect(tm.vehicleLeaveEvents).to.have.length(1);
     const event = tm.vehicleLeaveEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:14:58.687Z'));
+    expect(event.seatIndex).to.eq(0);
+    expect(event.rideDistance).to.eq(49.8331298828125);
 
     const character = event.character;
     expect(character.accountId).to.eq('account.aa4bbc13b0064871b40e81de7980cbc6');
@@ -1255,6 +1501,7 @@ describe('Telemetry entity', () => {
     expect(tm.vehicleRideEvents).to.have.length(1);
     const event = tm.vehicleRideEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:25:36.227Z'));
+    expect(event.seatIndex).to.eq(2);
 
     const character = event.character;
     expect(character.accountId).to.eq('account.28f8241e7c5842d980a88591e3f2a688');
@@ -1271,5 +1518,30 @@ describe('Telemetry entity', () => {
     expect(vehicle.vehicleId).to.eq('BP_Motorbike_04_C');
     expect(vehicle.healthPercent).to.eq(100);
     expect(vehicle.feulPercent).to.eq(36.70619201660156);
+  });
+
+  it('should parse wheel destroy events', () => {
+    expect(tm.wheelDestroyEvents).to.have.length(1);
+    const event = tm.wheelDestroyEvents[0];
+    expect(event.dateTime).to.deep.equal(new Date('2018-07-01T04:52:58.363Z'));
+    expect(event.attackId).to.eq(301991499);
+    expect(event.damageTypeCategory).to.eq('Damage_Gun');
+    expect(event.damageCauserName).to.eq('WeapHK416_C');
+
+    const attacker = event.attacker;
+    expect(attacker.accountId).to.eq('account.d50fdc18fcad49c691d38466bed6f8fd');
+    expect(attacker.health).to.eq(0);
+    expect(attacker.location.x).to.eq(0);
+    expect(attacker.location.y).to.eq(0);
+    expect(attacker.location.z).to.eq(0);
+    expect(attacker.name).to.eq('shroud');
+    expect(attacker.ranking).to.eq(0);
+    expect(attacker.teamId).to.eq(7);
+
+    const vehicle = event.vehicle;
+    expect(vehicle.vehicleType).to.eq('WheeledVehicle');
+    expect(vehicle.vehicleId).to.eq('Dacia_A_01_v2_C');
+    expect(vehicle.healthPercent).to.eq(92.83333587646484);
+    expect(vehicle.feulPercent).to.eq(41.6783332824707);
   });
 });

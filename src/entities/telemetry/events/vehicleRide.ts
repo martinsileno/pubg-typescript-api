@@ -9,11 +9,13 @@ import { TelemetryEvent } from './telemetryEvent';
 export class VehicleRide extends TelemetryEvent {
   private _character: Character;
   private _vehicle: Vehicle;
+  private _seatIndex: number;
 
   constructor(event: ILogVehicleRide) {
     super(event);
     this._character = new Character(event.character);
     this._vehicle = new Vehicle(event.vehicle);
+    this._seatIndex = event.seatIndex;
   }
 
   get character(): Character {
@@ -22,5 +24,9 @@ export class VehicleRide extends TelemetryEvent {
 
   get vehicle(): Vehicle {
     return this._vehicle;
+  }
+
+  get seatIndex(): number {
+    return this._seatIndex;
   }
 }

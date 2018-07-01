@@ -1,36 +1,40 @@
-import { ILogPlayerKill } from '../../..';
+import { ILogPlayerMakeGroggy } from '../../..';
 
 import { Character } from '../objects/character';
 
 import { TelemetryEvent } from './telemetryEvent';
 
 
-export class PlayerKill extends TelemetryEvent {
+export class PlayerMakeGroggy extends TelemetryEvent {
   private _attackId: number;
-  private _killer: Character;
+  private _attacker: Character;
   private _victim: Character;
   private _damageReason: string;
   private _damageTypeCategory: string;
   private _damageCauserName: string;
   private _distance: number;
+  private _isAttackerInVehicle: boolean;
+  private _dBNOId: number;
 
-  constructor(event: ILogPlayerKill) {
+  constructor(event: ILogPlayerMakeGroggy) {
     super(event);
     this._attackId = event.attackId;
-    this._killer = new Character(event.killer);
+    this._attacker = new Character(event.attacker);
     this._victim = new Character(event.victim);
     this._damageReason = event.damageReason;
     this._damageTypeCategory = event.damageTypeCategory;
     this._damageCauserName = event.damageCauserName;
     this._distance = event.distance;
+    this._isAttackerInVehicle = event.isAttackerInVehicle;
+    this._dBNOId = event.dBNOId;
   }
 
   get attackId(): number {
     return this._attackId;
   }
 
-  get killer(): Character {
-    return this._killer;
+  get attacker(): Character {
+    return this._attacker;
   }
 
   get victim(): Character {
@@ -51,5 +55,13 @@ export class PlayerKill extends TelemetryEvent {
 
   get distance(): number {
     return this._distance;
+  }
+
+  get isAttackerInVehicle(): boolean {
+    return this._isAttackerInVehicle;
+  }
+
+  get dBNOId(): number {
+    return this._dBNOId;
   }
 }
