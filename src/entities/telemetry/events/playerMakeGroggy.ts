@@ -9,6 +9,7 @@ export class PlayerMakeGroggy extends TelemetryEvent {
   private _attackId: number;
   private _attacker: Character;
   private _victim: Character;
+  private _damageReason: string;
   private _damageTypeCategory: string;
   private _damageCauserName: string;
   private _distance: number;
@@ -20,6 +21,7 @@ export class PlayerMakeGroggy extends TelemetryEvent {
     this._attackId = event.attackId;
     this._attacker = new Character(event.attacker);
     this._victim = new Character(event.victim);
+    this._damageReason = event.damageReason;
     this._damageTypeCategory = event.damageTypeCategory;
     this._damageCauserName = event.damageCauserName;
     this._distance = event.distance;
@@ -39,12 +41,20 @@ export class PlayerMakeGroggy extends TelemetryEvent {
     return this._victim;
   }
 
+  get damageReason(): string {
+    return this._damageReason;
+  }
+
   get damageTypeCategory(): string {
     return this._damageTypeCategory;
   }
 
   get damageCauserName(): string {
     return this._damageCauserName;
+  }
+
+  get distance(): number {
+    return this._distance;
   }
 
   get isAttackerInVehicle(): boolean {

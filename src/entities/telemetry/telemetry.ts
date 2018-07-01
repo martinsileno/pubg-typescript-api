@@ -53,7 +53,7 @@ export class Telemetry {
   private _playerKillEvents: PlayerKill[] = [];
   private _playerLoginEvents: PlayerLogin[] = [];
   private _playerLogoutEvents: PlayerLogout[] = [];
-  private _playerMakeGroggy: PlayerMakeGroggy[] = [];
+  private _playerMakeGroggyEvents: PlayerMakeGroggy[] = [];
   private _playerPositionEvents: PlayerPosition[] = [];
   private _playerReviveEvents: PlayerRevive[] = [];
   private _playerTakeDamageEvents: PlayerTakeDamage[] = [];
@@ -126,7 +126,7 @@ export class Telemetry {
           this._playerLogoutEvents.push(new PlayerLogout(elem));
           break;
         case TelemetryEventType.LOGPLAYERMAKEGROGGY:
-          this._playerMakeGroggy.push(new PlayerMakeGroggy(elem));
+          this._playerMakeGroggyEvents.push(new PlayerMakeGroggy(elem));
           break;
         case TelemetryEventType.LOGPLAYERPOSITION:
           this._playerPositionEvents.push(new PlayerPosition(elem));
@@ -160,6 +160,10 @@ export class Telemetry {
   }
 
   //#region GETTERS
+
+  get armorDestroyEvents() {
+    return this._armorDestroyEvents;
+  }
 
   get carePackageLandEvents() {
     return this._carePackageLandEvents;
@@ -233,8 +237,16 @@ export class Telemetry {
     return this._playerLogoutEvents;
   }
 
+  get playerMakeGroggyEvents() {
+    return this._playerMakeGroggyEvents;
+  }
+
   get playerPositionEvents() {
     return this._playerPositionEvents;
+  }
+
+  get playerReviveEvents() {
+    return this._playerReviveEvents;
   }
 
   get playerTakeDamageEvents() {
@@ -259,6 +271,10 @@ export class Telemetry {
 
   get vehicleRideEvents() {
     return this._vehicleRideEvents;
+  }
+
+  get wheelDestroyEvents() {
+    return this._wheelDestroyEvents;
   }
 
   //#endregion

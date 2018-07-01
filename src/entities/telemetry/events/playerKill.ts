@@ -9,6 +9,7 @@ export class PlayerKill extends TelemetryEvent {
   private _attackId: number;
   private _killer: Character;
   private _victim: Character;
+  private _damageReason: string;
   private _damageTypeCategory: string;
   private _damageCauserName: string;
   private _distance: number;
@@ -18,6 +19,7 @@ export class PlayerKill extends TelemetryEvent {
     this._attackId = event.attackId;
     this._killer = new Character(event.killer);
     this._victim = new Character(event.victim);
+    this._damageReason = event.damageReason;
     this._damageTypeCategory = event.damageTypeCategory;
     this._damageCauserName = event.damageCauserName;
     this._distance = event.distance;
@@ -33,6 +35,10 @@ export class PlayerKill extends TelemetryEvent {
 
   get victim(): Character {
     return this._victim;
+  }
+
+  get damageReason(): string {
+    return this._damageReason;
   }
 
   get damageTypeCategory(): string {

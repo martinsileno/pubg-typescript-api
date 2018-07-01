@@ -135,6 +135,8 @@ export interface ILogMatchStart extends ITelemetryEvent {
   characters: ICharacter[];
   cameraViewBehaviour: string;
   teamSize: number;
+  isCustomGame: boolean;
+  isEventMode: boolean;
   blueZoneCustomOptions: string;
 }
 
@@ -185,6 +187,7 @@ export interface ILogPlayerKill extends ITelemetryEvent {
   attackId: number;
   killer: ICharacter;
   victim: ICharacter;
+  damageReason: string;
   damageTypeCategory: string;
   damageCauserName: string;
   distance: number;
@@ -265,6 +268,7 @@ export interface ILogPlayerMakeGroggy extends ITelemetryEvent {
   attackId: number;
   attacker: ICharacter;
   victim: ICharacter;
+  damageReason: string;  // undocumented?
   damageTypeCategory: string;
   damageCauserName: string;
   distance: number;
