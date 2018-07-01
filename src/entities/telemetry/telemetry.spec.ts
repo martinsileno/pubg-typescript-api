@@ -10,20 +10,14 @@ const API_RESPONSE: ITelemetry = [
   {
     "MatchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
     "PingQuality": "low",
-    "_V": 2,
     "_D": "2018-04-27T09:14:41.7057369+00:00",
     "_T": "LogMatchDefinition"
   },
   {
-    "result": true,
-    "errorMessage": "",
     "accountId": "account.b2d6f13944a2487593dd828ed2794231",
     "common": {
-      "matchId": "",
-      "mapName": "",
       "isGame": 0
     },
-    "_V": 2,
     "_D": "2018-04-27T09:13:32.124Z",
     "_T": "LogPlayerLogin"
   },
@@ -41,11 +35,8 @@ const API_RESPONSE: ITelemetry = [
       "accountId": "account.b2d6f13944a2487593dd828ed2794231"
     },
     "common": {
-      "matchId": "",
-      "mapName": "",
       "isGame": 0
     },
-    "_V": 2,
     "_D": "2018-04-27T09:13:32.141Z",
     "_T": "LogPlayerCreate"
   },
@@ -65,11 +56,8 @@ const API_RESPONSE: ITelemetry = [
     "elapsedTime": 626,
     "numAlivePlayers": 49,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:22.997Z",
     "_T": "LogPlayerPosition"
   },
@@ -106,11 +94,8 @@ const API_RESPONSE: ITelemetry = [
       "feulPercent": 0
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:29.504Z",
     "_T": "LogPlayerAttack"
   },
@@ -135,11 +120,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:30.122Z",
     "_T": "LogItemPickup"
   },
@@ -164,11 +146,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:30.172Z",
     "_T": "LogItemEquip"
   },
@@ -193,11 +172,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:36.181Z",
     "_T": "LogItemUnequip"
   },
@@ -222,11 +198,8 @@ const API_RESPONSE: ITelemetry = [
     },
     "seatIndex": 2,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:25:36.227Z",
     "_T": "LogVehicleRide"
   },
@@ -257,11 +230,8 @@ const API_RESPONSE: ITelemetry = [
       "redZoneRadius": 0
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:14:52.262Z",
     "_T": "LogGameStatePeriodic"
   },
@@ -287,11 +257,8 @@ const API_RESPONSE: ITelemetry = [
     "rideDistance": 49.8331298828125,
     "seatIndex": 0,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:14:58.687Z",
     "_T": "LogVehicleLeave"
   },
@@ -326,22 +293,16 @@ const API_RESPONSE: ITelemetry = [
     "damage": 100,
     "damageCauserName": "WeapM16A4_C",
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:19.393Z",
     "_T": "LogPlayerTakeDamage"
   },
   {
     "accountId": "account.4bc589020b7e430ca5a100281c0985f4",
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:42.764Z",
     "_T": "LogPlayerLogout"
   },
@@ -373,11 +334,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:44.516Z",
     "_T": "LogItemAttach"
   },
@@ -402,11 +360,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:48.479Z",
     "_T": "LogItemDrop"
   },
@@ -440,11 +395,8 @@ const API_RESPONSE: ITelemetry = [
     "damageCauserName": "WeapBerreta686_C",
     "distance": 190.9481964111328,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:51.264Z",
     "_T": "LogPlayerKill"
   },
@@ -478,11 +430,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:16:59.889Z",
     "_T": "LogItemDetach"
   },
@@ -507,11 +456,8 @@ const API_RESPONSE: ITelemetry = [
       "attachedItems": []
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:17:16.909Z",
     "_T": "LogItemUse"
   },
@@ -555,11 +501,8 @@ const API_RESPONSE: ITelemetry = [
       ]
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:19:29.226Z",
     "_T": "LogCarePackageSpawn"
   },
@@ -587,11 +530,8 @@ const API_RESPONSE: ITelemetry = [
     "damageCauserName": "RedZoneBomb_C",
     "distance": -1,
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 1
     },
-    "_V": 2,
     "_D": "2018-04-27T09:19:52.791Z",
     "_T": "LogVehicleDestroy"
   },
@@ -642,11 +582,8 @@ const API_RESPONSE: ITelemetry = [
       ]
     },
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 3
     },
-    "_V": 2,
     "_D": "2018-04-27T09:33:50.684Z",
     "_T": "LogCarePackageLand"
   },
@@ -672,11 +609,8 @@ const API_RESPONSE: ITelemetry = [
     "teamSize": 1,
     "blueZoneCustomOptions": "[{\"phaseNum\":0,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":1,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":2,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":3,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":4,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":5,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":6,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":7,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":8,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693}]",
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 0.10000000149011612
     },
-    "_V": 2,
     "_D": "2018-04-27T09:14:41.702Z",
     "_T": "LogMatchStart"
   },
@@ -708,11 +642,8 @@ const API_RESPONSE: ITelemetry = [
       },
     ],
     "common": {
-      "matchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
-      "mapName": "Erangel_Main",
       "isGame": 7.5
     },
-    "_V": 2,
     "_D": "2018-04-27T09:45:43.640Z",
     "_T": "LogMatchEnd"
   },
@@ -1041,7 +972,6 @@ describe('Telemetry entity', () => {
   it('should parse match start events', () => {
     expect(tm.matchStartEvents).to.have.length(1);
     const event = tm.matchStartEvents[0];
-    expect(event.version).to.eq(2);
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:14:41.702Z'));
     /* tslint:disable-next-line:max-line-length quotemark */
     expect(event.blueZoneCustomOptions).to.eq("[{\"phaseNum\":0,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":1,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":2,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":3,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":4,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":5,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":6,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":7,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693},{\"phaseNum\":8,\"startDelay\":0,\"warningDuration\":0,\"releaseDuration\":0,\"poisonGasDamagePerSecond\":0,\"radiusRate\":0,\"spreadRatio\":5.9555184733804726e-43,\"landRatio\":0,\"circleAlgorithm\":-1941693693}]");
@@ -1146,8 +1076,6 @@ describe('Telemetry entity', () => {
     const event = tm.playerLoginEvents[0];
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:13:32.124Z'));
     expect(event.accountId).to.eq('account.b2d6f13944a2487593dd828ed2794231');
-    expect(event.errorMessage).to.eq('');
-    expect(event.result).to.be.true;
   });
 
   it('should parse player logout events', () => {

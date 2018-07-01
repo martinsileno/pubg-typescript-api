@@ -58,13 +58,10 @@ export interface IGameState {
 
 // XXX: ICommon exists in PC only!
 export interface ICommon {
-  matchId: string;
-  mapName: string;
   isGame: number;
 }
 
 export interface IBaseTelemetryEvent {
-  _V: number;
   _D: string;  // date string
   _T: string;  // discriminant of the Union type
 }
@@ -75,8 +72,6 @@ export interface ITelemetryEvent extends IBaseTelemetryEvent {
 
 export interface ILogPlayerLogin extends ITelemetryEvent {
   _T: 'LogPlayerLogin';
-  result: boolean;
-  errorMessage: string;
   accountId: string;
 }
 
