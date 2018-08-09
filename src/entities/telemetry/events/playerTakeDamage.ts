@@ -7,7 +7,7 @@ import { TelemetryEvent } from './telemetryEvent';
 
 export class PlayerTakeDamage extends TelemetryEvent {
   private _attackId: number;
-  private _attacker: Character;
+  private _attacker?: Character;
   private _victim: Character;
   private _damageTypeCategory: string;
   private _damageCauserName: string;
@@ -17,19 +17,21 @@ export class PlayerTakeDamage extends TelemetryEvent {
   constructor(event: ILogPlayerTakeDamage) {
     super(event);
     this._attackId = event.attackId;
-    this._attacker = new Character(event.attacker);
     this._victim = new Character(event.victim);
     this._damageTypeCategory = event.damageTypeCategory;
     this._damageCauserName = event.damageCauserName;
     this._damageReason = event.damageReason;
     this._damage = event.damage;
+    if (event.attacker) {
+      this._attacker = new Character(event.attacker);
+    }
   }
 
   get attackId(): number {
     return this._attackId;
   }
 
-  get attacker(): Character {
+  get attacker(): Character | undefined {
     return this._attacker;
   }
 

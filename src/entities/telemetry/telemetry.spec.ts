@@ -1240,10 +1240,11 @@ describe('Telemetry entity', () => {
     expect(weapon.subCategory).to.eq('Main');
 
     const vehicle = event.vehicle;
-    expect(vehicle.vehicleType).to.eq('');
-    expect(vehicle.vehicleId).to.eq('');
-    expect(vehicle.healthPercent).to.eq(0);
-    expect(vehicle.feulPercent).to.eq(0);
+    expect(vehicle).to.not.be.undefined;
+    expect(vehicle!.vehicleType).to.eq('');
+    expect(vehicle!.vehicleId).to.eq('');
+    expect(vehicle!.healthPercent).to.eq(0);
+    expect(vehicle!.feulPercent).to.eq(0);
   });
 
   it('should parse player create events', () => {
@@ -1395,14 +1396,15 @@ describe('Telemetry entity', () => {
     expect(event.damageReason).to.eq('HeadShot');
 
     const attacker = event.attacker;
-    expect(attacker.accountId).to.eq('account.bdfbbf10e33f4e33bd5967fa6a8af35d');
-    expect(attacker.health).to.eq(0);
-    expect(attacker.location.x).to.eq(0);
-    expect(attacker.location.y).to.eq(0);
-    expect(attacker.location.z).to.eq(0);
-    expect(attacker.name).to.eq('sami_70');
-    expect(attacker.ranking).to.eq(0);
-    expect(attacker.teamId).to.eq(44);
+    expect(attacker).to.not.be.undefined;
+    expect(attacker!.accountId).to.eq('account.bdfbbf10e33f4e33bd5967fa6a8af35d');
+    expect(attacker!.health).to.eq(0);
+    expect(attacker!.location.x).to.eq(0);
+    expect(attacker!.location.y).to.eq(0);
+    expect(attacker!.location.z).to.eq(0);
+    expect(attacker!.name).to.eq('sami_70');
+    expect(attacker!.ranking).to.eq(0);
+    expect(attacker!.teamId).to.eq(44);
 
     const victim = event.victim;
     expect(victim.accountId).to.eq('account.54b42bdadae640058f931a1b1fb66793');

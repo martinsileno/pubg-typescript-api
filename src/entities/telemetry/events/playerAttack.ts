@@ -12,7 +12,7 @@ export class PlayerAttack extends TelemetryEvent {
   private _attacker: Character;
   private _attackType: string;
   private _weapon: Item;
-  private _vehicle: Vehicle;
+  private _vehicle?: Vehicle;
 
   constructor(event: ILogPlayerAttack) {
     super(event);
@@ -20,7 +20,9 @@ export class PlayerAttack extends TelemetryEvent {
     this._attacker = new Character(event.attacker);
     this._attackType = event.attackType;
     this._weapon = new Item(event.weapon);
-    this._vehicle = new Vehicle(event.vehicle);
+    if (event.vehicle) {
+      this._vehicle = new Vehicle(event.vehicle);
+    }
   }
 
   get attackId(): number {
@@ -39,7 +41,7 @@ export class PlayerAttack extends TelemetryEvent {
     return this._weapon;
   }
 
-  get vehicle(): Vehicle {
+  get vehicle(): Vehicle | undefined {
     return this._vehicle;
   }
 }

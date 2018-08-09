@@ -93,7 +93,7 @@ export interface ILogPlayerAttack extends ITelemetryEvent {
   attacker: ICharacter;
   attackType: string;
   weapon: IItem;
-  vehicle: IVehicle;
+  vehicle?: IVehicle;
 }
 
 export interface ILogItemPickup extends ITelemetryEvent {
@@ -156,7 +156,7 @@ export interface ILogVehicleLeave extends ITelemetryEvent {
 export interface ILogPlayerTakeDamage extends ITelemetryEvent {
   _T: 'LogPlayerTakeDamage';
   attackId: number;
-  attacker: ICharacter;
+  attacker?: ICharacter;
   victim: ICharacter;
   damageTypeCategory: string;
   damageReason: string;
