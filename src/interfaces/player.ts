@@ -41,6 +41,7 @@ export interface IGameModeStats {
   losses: number;
   maxKillStreaks: number;
   mostSurvivalTime: number;
+  rankPoint: number;
   revives: number;
   rideDistance: number;
   roadKills: number;

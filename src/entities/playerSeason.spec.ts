@@ -26,6 +26,7 @@ const API_RESPONSE: IPlayerSeason = {
           "losses": 0,
           "maxKillStreaks": 0,
           "mostSurvivalTime": 0,
+          "rankPoint": 0,
           "revives": 0,
           "rideDistance": 0,
           "roadKills": 0,
@@ -58,6 +59,7 @@ const API_RESPONSE: IPlayerSeason = {
           "losses": 23,
           "maxKillStreaks": 2,
           "mostSurvivalTime": 1892.233,
+          "rankPoint": 0,
           "revives": 3,
           "rideDistance": 46569.055,
           "roadKills": 0,
@@ -90,6 +92,7 @@ const API_RESPONSE: IPlayerSeason = {
           "losses": 0,
           "maxKillStreaks": 0,
           "mostSurvivalTime": 0,
+          "rankPoint": 0,
           "revives": 0,
           "rideDistance": 0,
           "roadKills": 0,
@@ -122,6 +125,7 @@ const API_RESPONSE: IPlayerSeason = {
           "losses": 0,
           "maxKillStreaks": 0,
           "mostSurvivalTime": 0,
+          "rankPoint": 0,
           "revives": 0,
           "rideDistance": 0,
           "roadKills": 0,
@@ -154,6 +158,7 @@ const API_RESPONSE: IPlayerSeason = {
           "losses": 0,
           "maxKillStreaks": 0,
           "mostSurvivalTime": 0,
+          "rankPoint": 0,
           "revives": 0,
           "rideDistance": 0,
           "roadKills": 0,
@@ -186,6 +191,7 @@ const API_RESPONSE: IPlayerSeason = {
           "losses": 107,
           "maxKillStreaks": 4,
           "mostSurvivalTime": 1935.326,
+          "rankPoint": 0,
           "revives": 20,
           "rideDistance": 240468.52,
           "roadKills": 2,
@@ -296,6 +302,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.duoFPPStats.losses).to.eq(23);
     expect(playerSeason.duoFPPStats.maxKillStreaks).to.eq(2);
     expect(playerSeason.duoFPPStats.mostSurvivalTime).to.eq(1892.233);
+    expect(playerSeason.duoFPPStats.rankPoint).to.eq(0);
     expect(playerSeason.duoFPPStats.revives).to.eq(3);
     expect(playerSeason.duoFPPStats.rideDistance).to.eq(46569.055);
     expect(playerSeason.duoFPPStats.roadKills).to.eq(0);
@@ -327,6 +334,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.duoStats.losses).to.eq(0);
     expect(playerSeason.duoStats.maxKillStreaks).to.eq(0);
     expect(playerSeason.duoStats.mostSurvivalTime).to.eq(0);
+    expect(playerSeason.duoStats.rankPoint).to.eq(0);
     expect(playerSeason.duoStats.revives).to.eq(0);
     expect(playerSeason.duoStats.rideDistance).to.eq(0);
     expect(playerSeason.duoStats.roadKills).to.eq(0);
@@ -358,6 +366,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.soloStats.losses).to.eq(0);
     expect(playerSeason.soloStats.maxKillStreaks).to.eq(0);
     expect(playerSeason.soloStats.mostSurvivalTime).to.eq(0);
+    expect(playerSeason.soloStats.rankPoint).to.eq(0);
     expect(playerSeason.soloStats.revives).to.eq(0);
     expect(playerSeason.soloStats.rideDistance).to.eq(0);
     expect(playerSeason.soloStats.roadKills).to.eq(0);
@@ -389,6 +398,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.soloFPPStats.losses).to.eq(0);
     expect(playerSeason.soloFPPStats.maxKillStreaks).to.eq(0);
     expect(playerSeason.soloFPPStats.mostSurvivalTime).to.eq(0);
+    expect(playerSeason.soloFPPStats.rankPoint).to.eq(0);
     expect(playerSeason.soloFPPStats.revives).to.eq(0);
     expect(playerSeason.soloFPPStats.rideDistance).to.eq(0);
     expect(playerSeason.soloFPPStats.roadKills).to.eq(0);
@@ -420,6 +430,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.squadStats.losses).to.eq(0);
     expect(playerSeason.squadStats.maxKillStreaks).to.eq(0);
     expect(playerSeason.squadStats.mostSurvivalTime).to.eq(0);
+    expect(playerSeason.squadStats.rankPoint).to.eq(0);
     expect(playerSeason.squadStats.revives).to.eq(0);
     expect(playerSeason.squadStats.rideDistance).to.eq(0);
     expect(playerSeason.squadStats.roadKills).to.eq(0);
@@ -451,6 +462,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.squadFPPStats.losses).to.eq(107);
     expect(playerSeason.squadFPPStats.maxKillStreaks).to.eq(4);
     expect(playerSeason.squadFPPStats.mostSurvivalTime).to.eq(1935.326);
+    expect(playerSeason.squadFPPStats.rankPoint).to.eq(0);
     expect(playerSeason.squadFPPStats.revives).to.eq(20);
     expect(playerSeason.squadFPPStats.rideDistance).to.eq(240468.52);
     expect(playerSeason.squadFPPStats.roadKills).to.eq(2);
