@@ -72,8 +72,6 @@ const API_RESPONSE: IMatch = {
           "headshotKills": 0,
           "heals": 6,
           "killPlace": 39,
-          "killPoints": 1278,
-          "killPointsDelta": 3.161043,
           "killStreaks": 0,
           "kills": 0,
           "lastKillPoints": 0,
@@ -91,9 +89,7 @@ const API_RESPONSE: IMatch = {
           "vehicleDestroys": 0,
           "walkDistance": 4652.759,
           "weaponsAcquired": 0,
-          "winPlace": 2,
-          "winPoints": 1393,
-          "winPointsDelta": 31.835619
+          "winPlace": 2
         }
       }
     },
@@ -413,8 +409,8 @@ interface ExpectedParticipant {
   headshotKills: number;
   heals: number;
   killPlace: number;
-  killPoints: number;
-  killPointsDelta: number;
+  killPoints?: number;
+  killPointsDelta?: number;
   killStreaks: number;
   kills: number;
   lastKillPoints: number;
@@ -433,8 +429,8 @@ interface ExpectedParticipant {
   walkDistance: number;
   weaponsAcquired: number;
   winPlace: number;
-  winPoints: number;
-  winPointsDelta: number;
+  winPoints?: number;
+  winPointsDelta?: number;
 }
 
 const participantNix: ExpectedParticipant = {
@@ -447,8 +443,6 @@ const participantNix: ExpectedParticipant = {
   headshotKills: 0,
   heals: 6,
   killPlace: 39,
-  killPoints: 1278,
-  killPointsDelta: 3.161043,
   killStreaks: 0,
   kills: 0,
   lastKillPoints: 0,
@@ -466,9 +460,7 @@ const participantNix: ExpectedParticipant = {
   vehicleDestroys: 0,
   walkDistance: 4652.759,
   weaponsAcquired: 0,
-  winPlace: 2,
-  winPoints: 1393,
-  winPointsDelta: 31.835619,
+  winPlace: 2
 };
 
 const participantZakuro: ExpectedParticipant = {
