@@ -20,6 +20,7 @@ const API_RESPONSE: IMatch = {
       "gameMode": "duo-fpp",
       "isCustomMatch": false,
       "mapName": "Desert_Main",
+      "seasonState": "",
       "shardId": "pc-eu",
       "stats": null,
       "tags": null,
@@ -684,6 +685,7 @@ describe('Match entity', () => {
     expect(match.isCustomMatch).to.be.false;
     expect(match.map).to.equal(MapName.DESERT_MAIN);
     expect(match.patchVersion).to.be.an('undefined');
+    expect(match.seasonState).to.equal('');
     expect(match.shardId).to.equal(PlatformRegion.PC_EU);
   });
 

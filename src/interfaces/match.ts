@@ -100,6 +100,7 @@ export interface IMatch {
       isCustomMatch: boolean;
       mapName: string;  // XXX: sometimes not returned?
       patchVersion?: '';  // XXX: sometimes not returned?
+      seasonState: any;
       shardId: string;
       stats: null;
       tags: null;

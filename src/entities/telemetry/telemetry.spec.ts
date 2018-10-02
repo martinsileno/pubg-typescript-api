@@ -10,6 +10,7 @@ const API_RESPONSE: ITelemetry = [
   {
     "MatchId": "match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574",
     "PingQuality": "low",
+    "SeasonState": "",
     "_D": "2018-04-27T09:14:41.7057369+00:00",
     "_T": "LogMatchDefinition"
   },
@@ -1162,6 +1163,7 @@ describe('Telemetry entity', () => {
     /* tslint:disable-next-line:max-line-length */
     expect(event.matchId).to.equal('match.bro.official.2018-04.eu.duo-fpp.2018.04.27.8c1c8a56-4104-46ef-8aec-5e012b041574');
     expect(event.pingQuality).to.equal('low');
+    expect(event.seasonState).to.equal('');
     expect(event.dateTime).to.deep.equal(new Date('2018-04-27T09:14:41.7057369+00:00'));
   });
 
