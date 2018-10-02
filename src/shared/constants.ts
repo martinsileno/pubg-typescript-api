@@ -16,6 +16,7 @@ export enum GameMode {
 export enum MapName {
   DESERT_MAIN = 'Desert_Main',
   ERANGEL_MAIN = 'Erangel_Main',
+  SANHOK_MAIN = 'Savage_Main'
 }
 
 export enum PlatformRegion {
@@ -32,6 +33,8 @@ export enum PlatformRegion {
   PC_SEA = 'pc-sea',
   PC_SA = 'pc-sa',
   PC_AS = 'pc-as',
+  STEAM = 'steam',
+  KAKAO = 'kakao'
 }
 
 export enum TelemetryEventType {
