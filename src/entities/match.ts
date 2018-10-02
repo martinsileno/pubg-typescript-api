@@ -30,6 +30,7 @@ export class Match {
   private _isCustomMatch: boolean;
   private _map: MapName;
   private _patchVersion: string | undefined;
+  private _seasonState: any;
   private _shardId: PlatformRegion;
 
   private _participants: Participant[];
@@ -44,6 +45,7 @@ export class Match {
     this._isCustomMatch = matchDetail.data.attributes.isCustomMatch;
     this._map = matchDetail.data.attributes.mapName as MapName;
     this._patchVersion = matchDetail.data.attributes.patchVersion;
+    this._seasonState = matchDetail.data.attributes.seasonState;
     this._shardId = matchDetail.data.attributes.shardId as PlatformRegion;
 
     const participantsMap = new Map<string, Participant>();  // maps participant id to Participant
@@ -136,6 +138,10 @@ export class Match {
 
   get patchVersion() {
     return this._patchVersion;
+  }
+
+  get seasonState() {
+    return this._seasonState;
   }
 
   get shardId() {

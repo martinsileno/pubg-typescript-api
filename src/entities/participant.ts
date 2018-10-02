@@ -10,8 +10,8 @@ export class Participant {
   private _headshotKills: number;
   private _heals: number;
   private _killPlace: number;
-  private _killPoints: number;
-  private _killPointsDelta: number;
+  private _killPoints?: number;
+  private _killPointsDelta?: number;
   private _killStreaks: number;
   private _kills: number;
   private _lastKillPoints: number;
@@ -30,8 +30,8 @@ export class Participant {
   private _walkDistance: number;
   private _weaponsAcquired: number;
   private _winPlace: number;
-  private _winPoints: number;
-  private _winPointsDelta: number;
+  private _winPoints?: number;
+  private _winPointsDelta?: number;
 
   constructor(participant: IParticipant) {
     this._id = participant.id;

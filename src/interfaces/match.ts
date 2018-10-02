@@ -39,8 +39,8 @@ export interface IParticipantAttributes {
     headshotKills: number;
     heals: number;
     killPlace: number;
-    killPoints: number;
-    killPointsDelta: number;
+    killPoints?: number;
+    killPointsDelta?: number;
     killStreaks: number;
     kills: number;
     lastKillPoints: number;
@@ -59,8 +59,8 @@ export interface IParticipantAttributes {
     walkDistance: number;
     weaponsAcquired: number;
     winPlace: number;
-    winPoints: number;
-    winPointsDelta: number;
+    winPoints?: number;
+    winPointsDelta?: number;
   };
 }
 
@@ -100,6 +100,7 @@ export interface IMatch {
       isCustomMatch: boolean;
       mapName: string;  // XXX: sometimes not returned?
       patchVersion?: '';  // XXX: sometimes not returned?
+      seasonState: any;
       shardId: string;
       stats: null;
       tags: null;

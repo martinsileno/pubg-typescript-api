@@ -27,9 +27,11 @@ export interface IPlayerObject extends IAPIObject<IPlayerAttributes, IPlayerRela
 
 export interface IGameModeStats {
   assists: number;
+  bestRankPoints: number;
   boosts: number;
   dBNOs: number;
   dailyKills: number;
+  dailyWins: number;
   damageDealt: number;
   days: number;
   headshotKills: number;
@@ -41,12 +43,14 @@ export interface IGameModeStats {
   losses: number;
   maxKillStreaks: number;
   mostSurvivalTime: number;
+  rankPoints: number;
   revives: number;
   rideDistance: number;
   roadKills: number;
   roundMostKills: number;
   roundsPlayed: number;
   suicides: number;
+  swimDistance: number;
   teamKills: number;
   timeSurvived: number;
   top10s: number;
@@ -54,6 +58,7 @@ export interface IGameModeStats {
   walkDistance: number;
   weaponsAcquired: number;  // weaponAcquired in docs?
   weeklyKills: number;
+  weeklyWins: number;
   winPoints: number;
   // winRatio: number;  // doesn't exist?
   wins: number;
