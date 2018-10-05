@@ -3,5 +3,6 @@ export {
   GameMode,
   MapName,
   PlatformRegion,
+  SeasonState,
   TelemetryEventType,
 } from './constants';
