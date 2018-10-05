@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { DeathType, GameMode, IMatch, MapName, PlatformRegion } from '..';
+import { DeathType, GameMode, IMatch, MapName, PlatformRegion, SeasonState } from '..';
 
 import { Asset } from './asset';
 import { Match } from './match';
@@ -20,7 +20,7 @@ const API_RESPONSE: IMatch = {
       "gameMode": "duo-fpp",
       "isCustomMatch": false,
       "mapName": "Desert_Main",
-      "seasonState": "",
+      "seasonState": "progress",
       "shardId": "pc-eu",
       "stats": null,
       "tags": null,
@@ -685,7 +685,7 @@ describe('Match entity', () => {
     expect(match.isCustomMatch).to.be.false;
     expect(match.map).to.equal(MapName.DESERT_MAIN);
     expect(match.patchVersion).to.be.an('undefined');
-    expect(match.seasonState).to.equal('');
+    expect(match.seasonState).to.equal(SeasonState.PROGRESS);
     expect(match.shardId).to.equal(PlatformRegion.PC_EU);
   });
 

@@ -125,7 +125,7 @@ export interface ILogMatchDefinition extends IBaseTelemetryEvent {
   _T: 'LogMatchDefinition';
   MatchId: string;
   PingQuality: string;  // PC only
-  SeasonState: any;
+  SeasonState: string;
 }
 
 export interface ILogMatchStart extends ITelemetryEvent {

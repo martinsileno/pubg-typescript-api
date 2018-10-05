@@ -11,6 +11,7 @@ import {
   PlatformRegion,
   PubgAPI,
   Roster,
+  SeasonState,
   Telemetry,
   TelemetryPubgAPI,
 } from '..';
@@ -30,7 +31,7 @@ export class Match {
   private _isCustomMatch: boolean;
   private _map: MapName;
   private _patchVersion: string | undefined;
-  private _seasonState: any;
+  private _seasonState: SeasonState;
   private _shardId: PlatformRegion;
 
   private _participants: Participant[];
@@ -45,7 +46,7 @@ export class Match {
     this._isCustomMatch = matchDetail.data.attributes.isCustomMatch;
     this._map = matchDetail.data.attributes.mapName as MapName;
     this._patchVersion = matchDetail.data.attributes.patchVersion;
-    this._seasonState = matchDetail.data.attributes.seasonState;
+    this._seasonState = matchDetail.data.attributes.seasonState as SeasonState;
     this._shardId = matchDetail.data.attributes.shardId as PlatformRegion;
 
     const participantsMap = new Map<string, Participant>();  // maps participant id to Participant

@@ -37,6 +37,12 @@ export enum PlatformRegion {
   KAKAO = 'kakao'
 }
 
+export enum SeasonState {
+  CLOSED = 'closed',
+  PREPARE = 'prepare',
+  PROGRESS = 'progress'
+}
+
 export enum TelemetryEventType {
   LOGPLAYERLOGIN = 'LogPlayerLogin',
   LOGPLAYERCREATE = 'LogPlayerCreate',
