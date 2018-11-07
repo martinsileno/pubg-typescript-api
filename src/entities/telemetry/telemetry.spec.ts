@@ -56,6 +56,12 @@ const API_RESPONSE: ITelemetry = [
     },
     "elapsedTime": 626,
     "numAlivePlayers": 49,
+    "vehicle": {
+      "vehicleType": "",
+      "vehicleId": "",
+      "healthPercent": 0,
+      "feulPercent": 0
+    },
     "common": {
       "isGame": 1.5
     },
@@ -77,6 +83,7 @@ const API_RESPONSE: ITelemetry = [
       "accountId": "account.8544765d5ab34163ba33dec0ebf1ae72"
     },
     "attackType": "Weapon",
+    "fireWeaponStackCount": 0,
     "weapon": {
       "itemId": "Item_Weapon_HK416_C",
       "stackCount": 1,
@@ -1230,6 +1237,8 @@ describe('Telemetry entity', () => {
     expect(attacker.ranking).to.eq(0);
     expect(attacker.teamId).to.eq(25);
 
+    expect(event.fireWeaponStackCount).to.eq(0);
+
     const weapon = event.weapon;
     expect(weapon.attachedItems).to.eql([
       'Item_Attach_Weapon_Lower_Foregrip_C',
@@ -1359,6 +1368,13 @@ describe('Telemetry entity', () => {
     expect(character.name).to.eq('Cloudity');
     expect(character.ranking).to.eq(0);
     expect(character.teamId).to.eq(2);
+
+    const vehicle = event.vehicle;
+    expect(vehicle).to.not.be.undefined;
+    expect(vehicle!.vehicleType).to.eq('');
+    expect(vehicle!.vehicleId).to.eq('');
+    expect(vehicle!.healthPercent).to.eq(0);
+    expect(vehicle!.feulPercent).to.eq(0);
   });
 
   it('should parse player revive events', () => {
