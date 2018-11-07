@@ -6,7 +6,7 @@ import { IGameModeStats } from '..';
  */
 export class GameModeStats {
   private _assists: number;
-  private _bestRankPoints: number;
+  private _bestRankPoint: number;
   private _boosts: number;
   private _dBNOs: number;
   private _dailyKills: number;
@@ -44,7 +44,7 @@ export class GameModeStats {
 
   constructor(playerSeason: IGameModeStats) {
     this._assists = playerSeason.assists;
-    this._bestRankPoints = playerSeason.bestRankPoints;
+    this._bestRankPoint = playerSeason.bestRankPoint;
     this._boosts = playerSeason.boosts;
     this._dBNOs = playerSeason.dBNOs;
     this._dailyKills = playerSeason.dailyKills;
@@ -84,8 +84,8 @@ export class GameModeStats {
     return this._assists;
   }
 
-  get bestRankPoints(): number {
-    return this._bestRankPoints;
+  get bestRankPoint(): number {
+    return this._bestRankPoint;
   }
 
   get boosts(): number {

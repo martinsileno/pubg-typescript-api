@@ -27,7 +27,7 @@ export interface IPlayerObject extends IAPIObject<IPlayerAttributes, IPlayerRela
 
 export interface IGameModeStats {
   assists: number;
-  bestRankPoints: number;
+  bestRankPoint: number;
   boosts: number;
   dBNOs: number;
   dailyKills: number;

@@ -12,7 +12,7 @@ const API_RESPONSE: IPlayerSeason = {
       "gameModeStats": {
         "duo": {
           "assists": 0,
-          "bestRankPoints": 0,
+          "bestRankPoint": 0,
           "boosts": 0,
           "dBNOs": 0,
           "dailyKills": 0,
@@ -49,7 +49,7 @@ const API_RESPONSE: IPlayerSeason = {
         },
         "duo-fpp": {
           "assists": 8,
-          "bestRankPoints": 0,
+          "bestRankPoint": 0,
           "boosts": 31,
           "dBNOs": 10,
           "dailyKills": 2,
@@ -86,7 +86,7 @@ const API_RESPONSE: IPlayerSeason = {
         },
         "solo": {
           "assists": 0,
-          "bestRankPoints": 0,
+          "bestRankPoint": 0,
           "boosts": 0,
           "dBNOs": 0,
           "dailyKills": 0,
@@ -123,7 +123,7 @@ const API_RESPONSE: IPlayerSeason = {
         },
         "solo-fpp": {
           "assists": 0,
-          "bestRankPoints": 0,
+          "bestRankPoint": 0,
           "boosts": 0,
           "dBNOs": 0,
           "dailyKills": 0,
@@ -160,7 +160,7 @@ const API_RESPONSE: IPlayerSeason = {
         },
         "squad": {
           "assists": 0,
-          "bestRankPoints": 0,
+          "bestRankPoint": 0,
           "boosts": 0,
           "dBNOs": 0,
           "dailyKills": 0,
@@ -197,7 +197,7 @@ const API_RESPONSE: IPlayerSeason = {
         },
         "squad-fpp": {
           "assists": 26,
-          "bestRankPoints": 0,
+          "bestRankPoint": 0,
           "boosts": 139,
           "dBNOs": 60,
           "dailyKills": 4,
@@ -312,7 +312,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.squadMatchIds).to.eql([]);
 
     expect(playerSeason.duoFPPStats.assists).to.eq(8);
-    expect(playerSeason.duoFPPStats.bestRankPoints).to.eq(0);
+    expect(playerSeason.duoFPPStats.bestRankPoint).to.eq(0);
     expect(playerSeason.duoFPPStats.boosts).to.eq(31);
     expect(playerSeason.duoFPPStats.dBNOs).to.eq(10);
     expect(playerSeason.duoFPPStats.dailyKills).to.eq(2);
@@ -348,7 +348,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.duoFPPStats.wins).to.eq(1);
 
     expect(playerSeason.duoStats.assists).to.eq(0);
-    expect(playerSeason.duoStats.bestRankPoints).to.eq(0);
+    expect(playerSeason.duoStats.bestRankPoint).to.eq(0);
     expect(playerSeason.duoStats.boosts).to.eq(0);
     expect(playerSeason.duoStats.dBNOs).to.eq(0);
     expect(playerSeason.duoStats.dailyKills).to.eq(0);
@@ -384,7 +384,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.duoStats.wins).to.eq(0);
 
     expect(playerSeason.soloStats.assists).to.eq(0);
-    expect(playerSeason.soloStats.bestRankPoints).to.eq(0);
+    expect(playerSeason.soloStats.bestRankPoint).to.eq(0);
     expect(playerSeason.soloStats.boosts).to.eq(0);
     expect(playerSeason.soloStats.dBNOs).to.eq(0);
     expect(playerSeason.soloStats.dailyKills).to.eq(0);
@@ -420,7 +420,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.soloStats.wins).to.eq(0);
 
     expect(playerSeason.soloFPPStats.assists).to.eq(0);
-    expect(playerSeason.soloFPPStats.bestRankPoints).to.eq(0);
+    expect(playerSeason.soloFPPStats.bestRankPoint).to.eq(0);
     expect(playerSeason.soloFPPStats.boosts).to.eq(0);
     expect(playerSeason.soloFPPStats.dBNOs).to.eq(0);
     expect(playerSeason.soloFPPStats.dailyKills).to.eq(0);
@@ -456,7 +456,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.soloFPPStats.wins).to.eq(0);
 
     expect(playerSeason.squadStats.assists).to.eq(0);
-    expect(playerSeason.squadStats.bestRankPoints).to.eq(0);
+    expect(playerSeason.squadStats.bestRankPoint).to.eq(0);
     expect(playerSeason.squadStats.boosts).to.eq(0);
     expect(playerSeason.squadStats.dBNOs).to.eq(0);
     expect(playerSeason.squadStats.dailyKills).to.eq(0);
@@ -492,7 +492,7 @@ describe('PlayerSeason entity', () => {
     expect(playerSeason.squadStats.wins).to.eq(0);
 
     expect(playerSeason.squadFPPStats.assists).to.eq(26);
-    expect(playerSeason.squadFPPStats.bestRankPoints).to.eq(0);
+    expect(playerSeason.squadFPPStats.bestRankPoint).to.eq(0);
     expect(playerSeason.squadFPPStats.boosts).to.eq(139);
     expect(playerSeason.squadFPPStats.dBNOs).to.eq(60);
     expect(playerSeason.squadFPPStats.dailyKills).to.eq(4);
