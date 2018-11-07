@@ -24,6 +24,7 @@ export enum PlatformRegion {
   XBOX_EU = 'xbox-eu',
   XBOX_NA = 'xbox-na',
   XBOX_OC = 'xbox-oc',
+  XBOX_SA = 'xbox-sa',
   PC_KRJP = 'pc-krjp',
   PC_JP = 'pc-jp',
   PC_NA = 'pc-na',
