@@ -20,6 +20,9 @@ export enum MapName {
 }
 
 export enum PlatformRegion {
+  STEAM = 'steam',
+  KAKAO = 'kakao',
+  XBOX = 'xbox',
   XBOX_AS = 'xbox-as',
   XBOX_EU = 'xbox-eu',
   XBOX_NA = 'xbox-na',
@@ -34,8 +37,6 @@ export enum PlatformRegion {
   PC_SEA = 'pc-sea',
   PC_SA = 'pc-sa',
   PC_AS = 'pc-as',
-  STEAM = 'steam',
-  KAKAO = 'kakao'
 }
 
 export enum SeasonState {
