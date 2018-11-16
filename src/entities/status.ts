@@ -16,7 +16,7 @@ export class Status {
   }
 
   static async get(api: PubgAPI): Promise<Status> {
-    const statusAPI: StatusPubgAPI = new StatusPubgAPI(api);
+    const statusAPI: StatusPubgAPI = new StatusPubgAPI();
     const startDate: Date = new Date();
 
     const statusData = await statusAPI.get();
