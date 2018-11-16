@@ -1,9 +1,7 @@
 import { expect } from 'chai';
 import 'mocha';
 
-import { IStatus } from '..';
-
-import { Status } from './status';
+import { IStatus, Status } from '..';
 
 
 /* tslint:disable */
