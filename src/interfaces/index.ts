@@ -33,4 +33,8 @@ export {
   ISeasonList,
 } from './season';
 
+export {
+  IStatus
+} from './status';
+
 export * from './telemetry';

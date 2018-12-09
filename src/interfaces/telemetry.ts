@@ -85,6 +85,7 @@ export interface ILogPlayerPosition extends ITelemetryEvent {
   character: ICharacter;
   elapsedTime: number;
   numAlivePlayers: number;
+  vehicle: IVehicle;
 }
 
 export interface ILogPlayerAttack extends ITelemetryEvent {
@@ -92,6 +93,7 @@ export interface ILogPlayerAttack extends ITelemetryEvent {
   attackId: number;
   attacker: ICharacter;
   attackType: string;
+  fireWeaponStackCount: number;
   weapon: IItem;
   vehicle?: IVehicle;
 }

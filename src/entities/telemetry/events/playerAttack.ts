@@ -11,6 +11,7 @@ export class PlayerAttack extends TelemetryEvent {
   private _attackId: number;
   private _attacker: Character;
   private _attackType: string;
+  private _fireWeaponStackCount: number;
   private _weapon: Item;
   private _vehicle?: Vehicle;
 
@@ -19,6 +20,7 @@ export class PlayerAttack extends TelemetryEvent {
     this._attackId = event.attackId;
     this._attacker = new Character(event.attacker);
     this._attackType = event.attackType;
+    this._fireWeaponStackCount = event.fireWeaponStackCount;
     this._weapon = new Item(event.weapon);
     if (event.vehicle) {
       this._vehicle = new Vehicle(event.vehicle);
@@ -35,6 +37,10 @@ export class PlayerAttack extends TelemetryEvent {
 
   get attackType(): string {
     return this._attackType;
+  }
+
+  get fireWeaponStackCount(): number {
+    return this._fireWeaponStackCount;
   }
 
   get weapon(): Item {
