@@ -335,8 +335,8 @@ export interface ILogItemPickupFromCarePackage extends ITelemetryEvent {
   carePackageUniqueId: number;
 }
 
-export interface ILogItemPickupFromCustomCarePackage extends ITelemetryEvent {
-  _T: "LogItemPickupFromCarePackage";
+export interface ILogItemPickupFromCustomPackage extends ITelemetryEvent {
+  _T: "LogItemPickupFromCustomPackage";
   character: ICharacter;
   item: IItem;
 }
@@ -419,8 +419,8 @@ export interface ILogPlayerRedeploy extends ITelemetryEvent {
   character: ICharacter;
 }
 
-export interface ILogPlayerRedeployStart extends ITelemetryEvent {
-  _T: "LogPlayerRedeployStart";
+export interface ILogPlayerRedeployBRStart extends ITelemetryEvent {
+  _T: "LogPlayerRedeployBRStart";
   characters: ICharacter[];
 }
 
@@ -496,7 +496,7 @@ export type ITelemetryElement =
   | ILogCharacterCarry
   | ILogEmPickupLiftOff
   | ILogItemPickupFromCarePackage
-  | ILogItemPickupFromCustomCarePackage
+  | ILogItemPickupFromCustomPackage
   | ILogItemPickupFromVehicleTrunk
   | ILogItemPutToVehicleTrunk
   | ILogObjectDestroy
@@ -506,10 +506,12 @@ export type ITelemetryElement =
   | ILogPlayerDestroyProp
   | ILogPlayerKillV2
   | ILogPlayerRedeploy
-  | ILogPlayerRedeployStart
+  | ILogPlayerRedeployBRStart
   | ILogRedZoneEnded
   | ILogVaultStart
   | ILogVehicleDamage
-  | ILogWeaponFireCount;
+  | ILogWeaponFireCount
+  | ILogParachuteLanding
+  | ILogPlayerUseThrowable;
 
 export type ITelemetry = ITelemetryElement[];

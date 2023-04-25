@@ -1,4 +1,4 @@
-import { ILogItemPickupFromCustomCarePackage } from "../../..";
+import { ILogItemPickupFromCustomPackage } from "../../..";
 
 import { Character } from "../objects/character";
 import { Item } from "../objects/item";
@@ -9,7 +9,7 @@ export class ItemPickupFromCustomCarePackage extends TelemetryEvent {
   private _character: Character;
   private _item: Item;
 
-  constructor(event: ILogItemPickupFromCustomCarePackage) {
+  constructor(event: ILogItemPickupFromCustomPackage) {
     super(event);
     this._character = new Character(event.character);
     this._item = new Item(event.item);

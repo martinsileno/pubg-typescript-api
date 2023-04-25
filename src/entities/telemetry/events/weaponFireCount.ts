@@ -4,7 +4,7 @@ import { Character } from "../objects/character";
 
 import { TelemetryEvent } from "./telemetryEvent";
 
-export class IWeaponFireCount extends TelemetryEvent {
+export class WeaponFireCount extends TelemetryEvent {
   private _character: Character;
   private _weaponId: string;
   private _fireCount: number; // Increments of 10

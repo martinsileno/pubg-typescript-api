@@ -1,4 +1,4 @@
-import { ITelemetry, TelemetryEventType } from '../..';
+import { ITelemetry, TelemetryEventType } from "../..";
 
 import {
   ArmorDestroy,
@@ -30,8 +30,28 @@ import {
   VehicleLeave,
   VehicleRide,
   WheelDestroy,
-} from './events';
-
+  BlackZoneEnded,
+  CharacterCarry,
+  EmPickupLiftOff,
+  ItemPickupFromCarePackage,
+  ItemPickupFromCustomCarePackage,
+  ItemPickupFromVehicleTrunk,
+  ItemPutToVehicleTrunk,
+  ObjectDestroy,
+  ObjectInteraction,
+  ParachuteLanding,
+  PhaseChange,
+  PlayerDestroyBreachableWall,
+  PlayerDestroyProp,
+  PlayerKillV2,
+  PlayerRedeploy,
+  PlayerRedeployStart,
+  PlayerUseThrowable,
+  RedZoneEnded,
+  VaultStart,
+  VehicleDamage,
+  WeaponFireCount,
+} from "./events";
 
 export class Telemetry {
   private _armorDestroyEvents: ArmorDestroy[] = [];
@@ -63,9 +83,32 @@ export class Telemetry {
   private _vehicleLeaveEvents: VehicleLeave[] = [];
   private _vehicleRideEvents: VehicleRide[] = [];
   private _wheelDestroyEvents: WheelDestroy[] = [];
+  private _blackZoneEndedEvents: BlackZoneEnded[] = [];
+  private _characterCarryEvents: CharacterCarry[] = [];
+  private _emPickupLiftOffEvents: EmPickupLiftOff[] = [];
+  private _itemPickupFromCarePackageEvents: ItemPickupFromCarePackage[] = [];
+  private _itemPickupFromCustomCarePackageEvents: ItemPickupFromCustomCarePackage[] =
+    [];
+  private _itemPickupFromVehicleTrunkEvents: ItemPickupFromVehicleTrunk[] = [];
+  private _itemPutToVehicleTrunkEvents: ItemPutToVehicleTrunk[] = [];
+  private _objectDestroyEvents: ObjectDestroy[] = [];
+  private _objectInteractionEvents: ObjectInteraction[] = [];
+  private _parachuteLandingEvents: ParachuteLanding[] = [];
+  private _phaseChangeEvents: PhaseChange[] = [];
+  private _playerDestroyBreachableWallEvents: PlayerDestroyBreachableWall[] =
+    [];
+  private _playerDestroyPropEvents: PlayerDestroyProp[] = [];
+  private _playerKillV2Events: PlayerKillV2[] = [];
+  private _playerRedeployEvents: PlayerRedeploy[] = [];
+  private _playerRedeployStartEvents: PlayerRedeployStart[] = [];
+  private _playerUseThrowableEvents: PlayerUseThrowable[] = [];
+  private _redZoneEndedEvents: RedZoneEnded[] = [];
+  private _vaultStartEvents: VaultStart[] = [];
+  private _vehicleDamageEvents: VehicleDamage[] = [];
+  private _weaponFireCountEvents: WeaponFireCount[] = [];
 
   constructor(telemetryData: ITelemetry) {
-    telemetryData.forEach(elem => {
+    telemetryData.forEach((elem) => {
       switch (elem._T) {
         // switch on discriminant = elem type automatically "cast" as correct type
         case TelemetryEventType.LOGARMORDESTROY:
@@ -154,6 +197,79 @@ export class Telemetry {
           break;
         case TelemetryEventType.LOGWHEELDESTROY:
           this._wheelDestroyEvents.push(new WheelDestroy(elem));
+          break;
+        case TelemetryEventType.LOGBLACKZONEENDED:
+          this._blackZoneEndedEvents.push(new BlackZoneEnded(elem));
+          break;
+        case TelemetryEventType.LOGCHARACTERCARRY:
+          this._characterCarryEvents.push(new CharacterCarry(elem));
+          break;
+        case TelemetryEventType.LOGEMPICKUPLIFTOFF:
+          this._emPickupLiftOffEvents.push(new EmPickupLiftOff(elem));
+          break;
+        case TelemetryEventType.LOGITEMPICKUPFROMCAREPACKAGE:
+          this._itemPickupFromCarePackageEvents.push(
+            new ItemPickupFromCarePackage(elem)
+          );
+          break;
+        case TelemetryEventType.LOGITEMPICKUPFROMCUSTOMPACKAGE:
+          this._itemPickupFromCustomCarePackageEvents.push(
+            new ItemPickupFromCustomCarePackage(elem)
+          );
+          break;
+        case TelemetryEventType.LOGITEMPICKUPFROMVEHICLETRUNK:
+          this._itemPickupFromVehicleTrunkEvents.push(
+            new ItemPickupFromVehicleTrunk(elem)
+          );
+          break;
+        case TelemetryEventType.LOGOBJECTDESTROY:
+          this._objectDestroyEvents.push(new ObjectDestroy(elem));
+          break;
+        case TelemetryEventType.LOGOBJECTINTERACTION:
+          this._objectInteractionEvents.push(new ObjectInteraction(elem));
+          break;
+        case TelemetryEventType.LOGPARACHUTELANDING:
+          this._parachuteLandingEvents.push(new ParachuteLanding(elem));
+          break;
+        case TelemetryEventType.LOGPHASECHANGE:
+          this._phaseChangeEvents.push(new PhaseChange(elem));
+          break;
+        case TelemetryEventType.LOGPLAYERDESTROYBREACHABLEWALL:
+          this._playerDestroyBreachableWallEvents.push(
+            new PlayerDestroyBreachableWall(elem)
+          );
+          break;
+        case TelemetryEventType.LOGPLAYERDESTROYPROP:
+          this._playerDestroyPropEvents.push(new PlayerDestroyProp(elem));
+          break;
+        case TelemetryEventType.LOGPLAYERKILLV2:
+          this._playerKillV2Events.push(new PlayerKillV2(elem));
+          break;
+        case TelemetryEventType.LOGPLAYERREDEPLOY:
+          this._playerRedeployEvents.push(new PlayerRedeploy(elem));
+          break;
+        case TelemetryEventType.LOGPLAYERUSETHROWABLE:
+          this._playerUseThrowableEvents.push(new PlayerUseThrowable(elem));
+          break;
+        case TelemetryEventType.LOGPLAYERREDEPLOYBRSTART:
+          this._playerRedeployStartEvents.push(new PlayerRedeployStart(elem));
+          break;
+        case TelemetryEventType.LOGREDZONEENDED:
+          this._redZoneEndedEvents.push(new RedZoneEnded(elem));
+          break;
+        case TelemetryEventType.LOGVAULTSTART:
+          this._vaultStartEvents.push(new VaultStart(elem));
+          break;
+        case TelemetryEventType.LOGVEHICLEDAMAGE:
+          this._vehicleDamageEvents.push(new VehicleDamage(elem));
+          break;
+        case TelemetryEventType.LOGWEAPONFIRECOUNT:
+          this._weaponFireCountEvents.push(new WeaponFireCount(elem));
+          break;
+        case TelemetryEventType.LOGITEMPUTTOVEHICLETRUNK:
+          this._itemPutToVehicleTrunkEvents.push(
+            new ItemPutToVehicleTrunk(elem)
+          );
           break;
       }
     });
@@ -277,6 +393,89 @@ export class Telemetry {
     return this._wheelDestroyEvents;
   }
 
-  //#endregion
+  get blackZoneEndedEvents() {
+    return this._blackZoneEndedEvents;
+  }
 
+  get characterCarryEvents() {
+    return this._characterCarryEvents;
+  }
+
+  get emPickupLiftOffEvents() {
+    return this._emPickupLiftOffEvents;
+  }
+
+  get itemPickupFromCarePackageEvents() {
+    return this._itemPickupFromCarePackageEvents;
+  }
+
+  get itemPickupFromCustomCarePackageEvents() {
+    return this._itemPickupFromCustomCarePackageEvents;
+  }
+
+  get itemPickupFromVehicleTrunkEvents() {
+    return this._itemPickupFromVehicleTrunkEvents;
+  }
+
+  get itemPutToVehicleTrunkEvents() {
+    return this._itemPutToVehicleTrunkEvents;
+  }
+
+  get objectDestroyEvents() {
+    return this._objectDestroyEvents;
+  }
+
+  get objectInteractionEvents() {
+    return this._objectInteractionEvents;
+  }
+
+  get parachuteLandingEvents() {
+    return this._parachuteLandingEvents;
+  }
+
+  get phaseChangeEvents() {
+    return this._phaseChangeEvents;
+  }
+
+  get playerDestroyBreachableWallEvents() {
+    return this._playerDestroyBreachableWallEvents;
+  }
+
+  get playerDestroyPropEvents() {
+    return this._playerDestroyPropEvents;
+  }
+
+  get playerKillV2Events() {
+    return this._playerKillV2Events;
+  }
+
+  get playerRedeployEvents() {
+    return this._playerRedeployEvents;
+  }
+
+  get playerRedeployStartEvents() {
+    return this._playerRedeployStartEvents;
+  }
+
+  get playerUseThrowableEvents() {
+    return this._playerUseThrowableEvents;
+  }
+
+  get redZoneEndedEvents() {
+    return this._redZoneEndedEvents;
+  }
+
+  get vaultStartEvents() {
+    return this._vaultStartEvents;
+  }
+
+  get vehicleDamageEvents() {
+    return this._vehicleDamageEvents;
+  }
+
+  get weaponFireCountEvents() {
+    return this._weaponFireCountEvents;
+  }
+
+  //#endregion
 }
