@@ -4,3 +4,4 @@ dist/
 .idea
 .nyc_output
 coverage
+pnpm-lock.yaml
