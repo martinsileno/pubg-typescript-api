@@ -1,5 +1,10 @@
-import { IPlayer, IPlayerList, IPlayerObject, PlayersPubgAPI, PubgAPI } from '..';
-
+import {
+  IPlayer,
+  IPlayerList,
+  IPlayerObject,
+  PlayersPubgAPI,
+  PubgAPI,
+} from "..";
 
 /**
  * A PUBG Player.
@@ -18,7 +23,7 @@ export class Player {
     this._id = player.id;
     this._name = player.attributes.name;
     this._shardId = player.attributes.shardId;
-    this._matchIds = player.relationships!.matches.data.map(m => m.id);
+    this._matchIds = player.relationships!.matches.data.map((m) => m.id);
   }
 
   /**
@@ -83,7 +88,7 @@ export class Player {
    */
   static fromList(playerList: IPlayerList): Player[] {
     const players: Player[] = [];
-    playerList.data.forEach(playerData => {
+    playerList.data.forEach((playerData) => {
       const player = new Player(playerData);
       players.push(player);
     });
@@ -112,4 +117,7 @@ export class Player {
     return this._matchIds;
   }
 
+  get shardId() {
+    return this._shardId;
+  }
 }
