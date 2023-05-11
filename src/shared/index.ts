@@ -5,4 +5,4 @@ export {
   PlatformRegion,
   SeasonState,
   TelemetryEventType,
-} from './constants';
+} from "./constants";
