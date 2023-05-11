@@ -1,7 +1,4 @@
-export {
-  IAPIObject,
-  ISimpleAPIObject,
-} from './common';
+export { IAPIObject, ISimpleAPIObject } from "./common";
 
 export {
   IAsset,
@@ -12,7 +9,7 @@ export {
   IRoster,
   IRosterAttributes,
   IRosterRelationships,
-} from './match';
+} from "./match";
 
 export {
   IGameModeStats,
@@ -22,19 +19,14 @@ export {
   IPlayerObject,
   IPlayerRelationships,
   IPlayerSeason,
-} from './player';
+} from "./player";
 
-export {
-  ISample,
-} from './sample';
+export { ISample } from "./sample";
 
-export {
-  ISeason,
-  ISeasonList,
-} from './season';
+export { ISeason, ISeasonList } from "./season";
 
-export {
-  IStatus
-} from './status';
+export { IStatus } from "./status";
 
-export * from './telemetry';
+export { IWeaponMastery, ISurvivalMastery } from "./mastery";
+
+export * from "./telemetry";
